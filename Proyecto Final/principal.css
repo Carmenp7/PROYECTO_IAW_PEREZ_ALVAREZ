@@ -1,0 +1,9 @@
+body{
+    background: url("IMAGENES/taller.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a.navbar-brand {
+    margin-right: 360px;
+}
