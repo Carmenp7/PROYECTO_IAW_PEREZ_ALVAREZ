@@ -1,137 +1,87 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300,100);
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Numans');
 
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-html, body {
-    height: 100%;
-    width: 100%;
+html,body{
+background-image: url('/Proyecto\ Final/IMAGENES/taller.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
 }
 
-body {
-    font-family: 'Raleway',sans-serif;
-    position: relative;
-    /*background: rgba(0, 0, 0, 0) url("../img/ptn.png") repeat scroll 0 0;*/
+.container{
+height: 100%;
+align-content: center;
 }
 
-.in-page {
-    min-height: 520px;
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
 }
 
-.main {
-    position: relative;
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
 }
 
-a {
-    color: #1b5a7c;
+.social_icon span:hover{
+color: white;
+cursor: pointer;
 }
 
-a:hover, a:focus {
-    color: #1b5a7c;
+.card-header h3{
+color: white;
 }
 
-.btn-cyan {
-    background-color: #1b5a7c;
-    color: #fff;
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
 }
 
-.btn-cyan:hover {
-    color: #fff;
-    opacity: 0.9;
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
 }
 
-.form-control:focus {
-    border-color: #1b5a7c;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(24, 204, 162, 0.6);
-    outline: 0 none;
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
 }
 
-.min-height {
-    min-height: 380px;
+.remember{
+color: white;
 }
 
-.login-screen {
-    background-image: url(https://www.squiz.net/__public/Systems/Perspective/FileCache/1-32000/465/prop/header-bg-image.jpg?t=1472431690);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
 }
 
-.login-screen:before {
-    content: "";
-    background: rgba(0,0,0, 0.5);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
 }
 
-.login-center {
-    text-align: left;
+.login_btn:hover{
+color: black;
+background-color: white;
 }
 
-.login {
-    width: 320px;
-    color: #fff;
+.links{
+color: white;
 }
 
-.login .login-form {
-    text-align: left;
-}
-
-.login label {
-    color: #fff;
-}
-
-.login-form .input-group .form-control {
-    background: none;
-    height: 44px;
-    color: #ddd;
-}
-
-.login-form .input-group .input-group-addon {
-    background: none;
-}
-
-.login-form .input-group .input-group-addon .glyphicon {
-    color: #1b5a7c;
-}
-
-.login-form .input-group .form-control::-moz-placeholder {
-    color: #fff;
-    opacity: 0.3;
-}
-
-.login .sign-btn input.btn {
-    background: #1b5a7c;
-    border-color: #1b5a7c;
-    color: #fff;
-    width: 180px;
-}
-
-.login .sign-btn a {
-    text-decoration: none;
-}
-
-.login .checkbox {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.login .forgot {
-    display: inline-block;
-    margin: 20px 0;
+.links a{
+margin-left: 4px;
 }
