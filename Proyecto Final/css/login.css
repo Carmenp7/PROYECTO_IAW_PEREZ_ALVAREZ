@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('/Proyecto\ Final/IMAGENES/taller.jpg');
+height: 100%;
+background-image:url(/Proyecto\ Final/IMAGENES/bmw.jpg);
+position: absolute;
+top: 0;
+left: 0;
+background-position: center 0;
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
 font-family: 'Numans', sans-serif;
 }
-
+html,body {
+   
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
 .container{
 height: 100%;
 align-content: center;
@@ -24,7 +35,7 @@ background-color: rgba(0,0,0,0.5) !important;
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: #FFC312;
+color: #ff8533;
 }
 
 .social_icon span:hover{
@@ -44,7 +55,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
+background-color: #ff8533;
 color: black;
 border:0 !important;
 }
@@ -69,7 +80,7 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: #ff8533;
 width: 100px;
 }
 
@@ -84,4 +95,5 @@ color: white;
 
 .links a{
 margin-left: 4px;
+color: #ff8533;
 }

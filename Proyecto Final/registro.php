@@ -13,8 +13,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
   <body>
 
@@ -30,7 +29,7 @@
 
           $consulta="select * from clientes where
           Nombre='$_POST[user]' and password=md5('$_POST[password]');";
-          
+
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
@@ -48,13 +47,12 @@
       }
     ?>
 
-
 <body>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Inicio de sesión</h3>
+				<h3>Inicio</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -62,31 +60,34 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form action="login.php" method="post">
+                    <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><img src="IMAGENES/arroba.png" style="width:20px ; height:22px"/></i></span>                           
+						</div>
+						<input name="e-mail" type="text" class="form-control" placeholder="E-mail">						
+					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input name="user" required type="text" class="form-control" placeholder="Usuario">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input name="password" required type="password" required class="form-control" placeholder="Contraseña">
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+                        <input type="submit" value="Siguiente" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
+					Si ya tiene tu cuenta <a href="login.php">Inicia Sesión</a>
 				</div>
 			</div>
 		</div>
