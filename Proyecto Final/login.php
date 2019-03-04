@@ -20,7 +20,7 @@
   <?php
         if (isset($_POST["user"])) {
 
-          $connection = new mysqli("localhost", "root", "123456", "proyecto");
+          $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
 
           if ($connection->connect_errno) {
               printf("Connection failed: %s\n", $connection->connect_error);

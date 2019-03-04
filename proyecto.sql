@@ -1,3 +1,6 @@
+drop database if exists proyecto;
+create database proyecto;
+use proyecto;
 
 DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
@@ -12,7 +15,6 @@ CREATE TABLE `clientes` (
 LOCK TABLES `clientes` WRITE;
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `recambios`;
 CREATE TABLE `recambios` (
   `IdRecambio` varchar(10) NOT NULL,
   `Descripcion` varchar(100) DEFAULT NULL,
@@ -24,8 +26,8 @@ CREATE TABLE `recambios` (
 LOCK TABLES `recambios` WRITE;
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `empleados`;
 
+DROP TABLE IF EXISTS `empleados`;
 CREATE TABLE `empleados` (
   `CodEmpleado` varchar(5) NOT NULL,
   `DNI` varchar(25) DEFAULT NULL,
@@ -38,15 +40,11 @@ CREATE TABLE `empleados` (
   `Categoria` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CodEmpleado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
-
 LOCK TABLES `empleados` WRITE;
-
 UNLOCK TABLES;
 
-DROP TABLE IF EXISTS `reparaciones`;
 
+DROP TABLE IF EXISTS `reparaciones`;
 CREATE TABLE `reparaciones` (
   `IdReparacion` int(11) NOT NULL AUTO_INCREMENT,
   `Matricula` varchar(8) NOT NULL,
@@ -58,13 +56,10 @@ CREATE TABLE `reparaciones` (
   `Observaciones` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`IdReparacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 LOCK TABLES `reparaciones` WRITE;
-
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vehiculos`;
-
 CREATE TABLE `vehiculos` (
   `Matricula` varchar(8) NOT NULL,
   `Marca` varchar(25) DEFAULT NULL,
@@ -74,8 +69,5 @@ CREATE TABLE `vehiculos` (
   `CodCliente` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`Matricula`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
 LOCK TABLES `vehiculos` WRITE;
-
 UNLOCK TABLES;
