@@ -33,11 +33,12 @@
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
-                echo "LOGIN INVALIDO";
+                echo "<script type='text/javascript'>alert('Este usuario no está registrado');</script>";
               } else {
 
                 $_SESSION["user"]=$_POST["user"];
                 $_SESSION["language"]="es";
+
                 header("Location: principal.php");
               }
           } else {

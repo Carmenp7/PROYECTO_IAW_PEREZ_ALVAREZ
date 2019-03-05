@@ -5,16 +5,17 @@ use proyecto;
 DROP TABLE IF EXISTS `clientes`;
 CREATE TABLE `clientes` (
   `CodCliente` varchar(5) NOT NULL,
-  `DNI` varchar(25) NOT NULL,
   `Nombre` varchar(25) DEFAULT NULL,
   `Apellidos` varchar(50) DEFAULT NULL,
-  `Direccion` varchar(50) DEFAULT NULL,
-  `Telefono` varchar(9) DEFAULT NULL,
+  `Correo` varchar(40) DEFAULT NULL,
+  `password` varchar(40) DEFAULT NULL,
+  `Fecha_Alta` DATE DEFAULT NULL,
   PRIMARY KEY (`CodCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 LOCK TABLES `clientes` WRITE;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `recambios`;
 CREATE TABLE `recambios` (
   `IdRecambio` varchar(10) NOT NULL,
   `Descripcion` varchar(100) DEFAULT NULL,
