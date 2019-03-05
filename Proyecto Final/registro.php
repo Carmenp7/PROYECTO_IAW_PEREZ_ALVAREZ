@@ -87,12 +87,12 @@
       if ($result = $connection->query($consulta1)) {
           if ($result->num_rows==0) {
             if ($result = $connection->query($consulta2)) {
-								header("refresh:0;url=login.php");
-                echo "<script type='text/javascript'>alert('Usuario registrado con éxito.');</script>";
+							header("refresh:0;url=login.php");
+              echo "<h3>Usuario registrado con éxito</h3>";
 						}
 					} else {
 						header("refresh:0;url=registro.php");
-						echo "<script type='text/javascript'>alert('Este usuario ya está registrado.');</script>";
+						echo "<h3>Este usuario ya está registrado</h3>";
 					}
 
       } else {
