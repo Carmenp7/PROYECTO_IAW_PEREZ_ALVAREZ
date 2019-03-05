@@ -14,24 +14,18 @@ html,body {
 #Menu
 a.menu{
   color:white;
-  font-family: 'Numans', sans-serif;  
+  font-family: "Tahoma", "Geneva", sans-serif; 
+  margin-bottom:0px; 
 }
 a.nav-link{
   text-decoration: none;
   font-size: 18px;
-  font-weight: 500;
   cursor: pointer;
   position: relative;
   color: white;
-  font-family: 'Numans', sans-serif;
+  font-family: "Tahoma", "Geneva", sans-serif;
+  margin-bottom:0px;
 }
-
-
-<!-- a.navbar-brand {
-  float: left;
-  color:white;
-  font-family: 'Numans', sans-serif;
-} -->
 
 img.navbar-brand{
 float: left;
@@ -55,17 +49,37 @@ nav.main-navigation ul.nav-list {
   line-height: 40px;
   margin-left: 30px;
   margin-top: 15px;
+  margin-bottom:0px;
 }
 
-#Carousel
-.carousel-item {
-  display: block;
-  width: 100%;
-  height: 200px;
-}
-.carousel-item img {
-  height: 100%;
-  width: 100%;
+div.row{
+  height: 50px;
+  margin-bottom:0px;
 }
 
+nav.col-md-10{
+  height: 100px;
+}
 
+.col-md-2{
+  height: 100px;
+}
+
+.col-md-2 img{
+margin-top:25px;
+width:38px;
+height:38px;
+}
+
+.nav-list{
+  padding-left:250px;
+  padding-right:200px;
+  margin-bottom:0px;
+}
+
+.row hr{
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid white;
+
+}

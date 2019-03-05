@@ -1,0 +1,8 @@
+@import '/Proyecto%20Final/css/principal_admin.css';
+ 
+.container{
+    background-color: white;
+    width: 100px;
+    height: 200px;
+    margin-top: 20px;
+}

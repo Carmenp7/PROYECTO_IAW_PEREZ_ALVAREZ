@@ -87,8 +87,7 @@
       if ($result = $connection->query($consulta1)) {
           if ($result->num_rows==0) {
             if ($result = $connection->query($consulta2)) {
-							header("refresh:0;url=login.php");
-              echo "<h3>Usuario registrado con éxito</h3>";
+							header("refresh:3;url=login.php");
 						}
 					} else {
 						header("refresh:0;url=registro.php");
