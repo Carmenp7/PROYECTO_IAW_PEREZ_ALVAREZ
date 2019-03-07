@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/principal_admin.css" TYPE="text/css" MEDIA=screen>
+<link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -11,11 +11,11 @@
   <div class="row">
     <nav class="col-md-10" class="main-navigation">
       <div class="navbar-header animated fadeInUp">
-        <img src="../IMAGENES/logo.png" class="navbar-brand" id="menu" href="#"/>
+        <img src="/Proyecto%20Final/IMAGENES/logo.png" class="navbar-brand" id="logo" href="#"/>
       </div>
     </nav>
     <div class="col-md-2">
-      <img src="../IMAGENES/usuario3.png"/>
+      <img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"/>
     <div>
   </div>
 </div>
@@ -24,18 +24,23 @@
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">
       <li class="nav-list-item">
-          <a href="./clientes/clientes_admin.php"  id="menu" class="nav-link">Clientes</a>
+          <a href="clientes_admin.php"  id="menu" class="nav-link">Clientes</a>
         </li>
         <li class="nav-list-item">
-          <a href="./empleados/empleados_admin.php"  id="menu" class="nav-link">Empleados</a>
+          <a href="empleados_admin.php"  id="menu" class="nav-link">Empleados</a>
         </li>
         <li class="nav-list-item">
-          <a href="./recambios/recambios_admin.php"  id="menu" class="nav-link">Recambios</a>
+          <a href="recambios_admin.php"  id="menu" class="nav-link">Recambios</a>
         </li>
         <li class="nav-list-item">
-          <a href="./vehiculos/vehiculos_admin.php"  id="menu" class="nav-link">Vehículos</a>
+          <a href="vehiculos_admin.php"  id="menu" class="nav-link">Vehículos</a>
         </li>
       </ul>
     </nav>
   </div>
+</div>
+<div class="container">
+<div class="row">
+<hr aling="left" noshade="noshade" size="4" width="80%" />
+</div>
 </div>
