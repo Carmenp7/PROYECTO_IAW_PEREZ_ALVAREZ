@@ -11,8 +11,12 @@ html,body {
   height: 100%;
 }
 
+.container{
+  margin-top:20px;
+}
+
 #Menu
-a.menu{
+a.menuadmin{
   color:white;
   font-family: "Tahoma", "Geneva", sans-serif; 
   margin-bottom:0px; 
@@ -27,9 +31,9 @@ a.nav-link{
   margin-bottom:0px;
 }
 
-img.navbar-brand{
+#logo{
 float: left;
-width:100px;
+width:300px;
 }
 
 nav.main-navigation {
@@ -78,7 +82,7 @@ height:38px;
 }
 
 .row hr{
-  margin-bottom: 1rem;
+  margin-bottom: 30px;;
   border: 0;
   border-top: 1px solid white;
 

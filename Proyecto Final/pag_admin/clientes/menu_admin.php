@@ -11,11 +11,11 @@
   <div class="row">
     <nav class="col-md-10" class="main-navigation">
       <div class="navbar-header animated fadeInUp">
-        <img src="../IMAGENES/logo.png" class="navbar-brand" id="menu" href="#"/>
+        <img src="/Proyecto%20Final/IMAGENES/logo.png" class="navbar-brand" id="logo" href="#"/>
       </div>
     </nav>
     <div class="col-md-2">
-      <img src="../IMAGENES/usuario3.png"/>
+      <img src="/Proyecto%20Final/IMAGENES/usuario3.png"/>
     <div>
   </div>
 </div>
@@ -24,16 +24,16 @@
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">
       <li class="nav-list-item">
-          <a href="./clientes/clientes_admin.php"  id="menu" class="nav-link">Clientes</a>
+          <a href="./clientes/clientes_admin.php"  id="menuadmin" class="nav-link">Clientes</a>
         </li>
         <li class="nav-list-item">
-          <a href="./empleados/empleados_admin.php"  id="menu" class="nav-link">Empleados</a>
+          <a href="./empleados/empleados_admin.php"  id="menuadmin" class="nav-link">Empleados</a>
         </li>
         <li class="nav-list-item">
-          <a href="./recambios/recambios_admin.php"  id="menu" class="nav-link">Recambios</a>
+          <a href="./recambios/recambios_admin.php"  id="menuadmin" class="nav-link">Recambios</a>
         </li>
         <li class="nav-list-item">
-          <a href="./vehiculos/vehiculos_admin.php"  id="menu" class="nav-link">Vehículos</a>
+          <a href="./vehiculos/vehiculos_admin.php"  id="menudmin" class="nav-link">Vehículos</a>
         </li>
       </ul>
     </nav>

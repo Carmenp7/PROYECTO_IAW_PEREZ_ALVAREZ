@@ -1,5 +1,10 @@
+<?php session_start();
+
+if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
+<?php ob_start(); ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,16 +20,24 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>  
-<body> 
 
-<div class="container">
-  <div class="row">
-  <?php
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+        <?php include_once "menu_admin.php"?>
+    <div>
+      <hr aling="left" noshade="noshade" size="2" width="80%"/>
+    </div>
+      <div class="row">
+      <a href='anadir_cliente.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a>
+        <div class="col-md-12">
+
+<?php
 
 //CREATING THE CONNECTION
 $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
-$connection->set_charset("uft8");
+$connection->set_charset("utf8");
 
 //TESTING IF THE CONNECTION WAS RIGHT
 if ($connection->connect_errno) {
@@ -33,26 +46,23 @@ if ($connection->connect_errno) {
 }
 
 //MAKING A SELECT QUERY
-  $consulta="SELECT * from clientes";
-if ($result = $connection->query($consulta)) {
+/* Consultas de selección que devuelven un conjunto de resultados */
+if ($result = $connection->query("select * from clientes;")) {
 
-    printf("<p>The select query returned %d rows.</p>", $result->num_rows);
+   echo "<table class='table table-hover'>";
+    ?>
+    <thead>
+      <tr>
+        <th>CodCliente</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        <th>Password</th>
+        <th>Fecha Alta</th>
+        <th></th>     
+      </tr>
+    </thead>
 
-?>
-
-    <!-- PRINT THE TABLE AND THE HEADER -->
-<table style="border:1px solid black">
-<thead>
-  <tr>
-      <th>CodCliente</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Correo</th>
-      <th>Password</th>
-      <th>Fecha de alta</th>
-    </tr>   
-</thead>
-</table>
 <?php
 
     //FETCHING OBJECTS FROM THE RESULT SET
@@ -60,12 +70,15 @@ if ($result = $connection->query($consulta)) {
     while($obj = $result->fetch_object()) {
         //PRINTING EACH ROW
         echo "<tr>";
-          echo "<td>".$obj->CodCliente."</td>";
-          echo "<td>".$obj->Nombre."</td>";
-          echo "<td>".$obj->Apellidos."</td>";
-          echo "<td>".$obj->Correo."</td>";
-          echo "<td>".$obj->password."</td>";
-          echo "<td>".$obj->Fecha_alta."</td>";
+        echo "<td>".$obj->CodCliente."</td>";
+        echo "<td>".$obj->Nombre."</td>";
+        echo "<td>".$obj->Apellido."</td>";
+        echo "<td>".$obj->Correo."</td>";
+        echo "<td>".$obj->password."</td>";
+        echo "<td>".$obj->Fecha_Alta."</td>";
+        echo "<td><a method='POST' action='clientes_admin.php' href='editar_clientes.php'?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->correo&password=$obj->password&Fecha_Alta=$obj->Fecha_Alta'><img src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_cliente.php'?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->correo&password=$obj->password&Fecha_Alta=$obj->Fecha_Alta'><img src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+              </td>";
         echo "</tr>";
     }
 
@@ -75,9 +88,19 @@ if ($result = $connection->query($consulta)) {
     unset($connection);
 
 } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
+
 ?>
-  </div>
-</div>
+    </div>
+    </div>
+
 
 </body>
 </html>
+
+<?php } else {
+    session_destroy();
+    header("Location: ../login.php");
+  }
+
+
+ ?>

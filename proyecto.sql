@@ -118,7 +118,9 @@ CREATE TABLE `reparaciones` (
   `FechaSalida` date DEFAULT NULL,
   `Reparado` tinyint(1) DEFAULT NULL,
   `Observaciones` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`IdReparacion`)
+  RIMARY KEY (`IdReparacion`),
+  KEY `REPAR_FK_CodRep` (`Matricula`),
+  CONSTRAINT `REPAR_FK_CodRep` FOREIGN KEY (`Matricula`) REFERENCES `vehiculos` (`Matricula`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -146,6 +148,8 @@ CREATE TABLE `vehiculos` (
   `FechaMatriculacion` date DEFAULT NULL,
   `CodCliente` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`Matricula`)
+  KEY `VEHIC_FK_CodCli` (`CodCliente`),
+  CONSTRAINT `VEHIC_FK_CodCli` FOREIGN KEY (`CodCliente`) REFERENCES `clientes` (`CodCliente`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
