@@ -41,6 +41,6 @@
 </div>
 <div class="container">
 <div class="row">
-<hr aling="left" noshade="noshade" size="4" width="80%" />
+<hr id="separador" aling="left" noshade="noshade" size="4" width="80%" />
 </div>
 </div>

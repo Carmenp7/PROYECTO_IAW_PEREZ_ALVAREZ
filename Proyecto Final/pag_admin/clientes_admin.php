@@ -21,7 +21,70 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 </head>
 
   <?php include_once 'menu_admin.php'?>
- 
+
+  
+<div class="row">      
+  <div id="tabla" class="col-md-12">
+    
+  <?php
+
+//CREATING THE CONNECTION
+$connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
+$connection->set_charset("utf8");
+
+//TESTING IF THE CONNECTION WAS RIGHT
+if ($connection->connect_errno) {
+    printf("Connection failed: %s\n", $connection->connect_error);
+    exit();
+}
+
+//MAKING A SELECT QUERY
+/* Consultas de selección que devuelven un conjunto de resultados */
+if ($result = $connection->query("select * from clientes;")) {
+
+   echo "<table class='table table-hover'>";
+    ?>
+    <thead>
+      <tr>
+        <th>CodCliente</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        <th>Password</th>
+        <th>Fecha Alta</th>
+        <th><a href='anadir_cliente.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
+      </tr>
+    </thead>
+
+<?php
+
+    //FETCHING OBJECTS FROM THE RESULT SET
+    //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
+    while($obj = $result->fetch_object()) {
+        //PRINTING EACH ROW
+        echo "<tr>";
+        echo "<td>".$obj->CodCliente."</td>";
+        echo "<td>".$obj->Nombre."</td>";
+        echo "<td>".$obj->Apellido."</td>";
+        echo "<td>".$obj->Correo."</td>";
+        echo "<td>".$obj->password."</td>";
+        echo "<td>".$obj->Fecha_Alta."</td>";
+        echo "<td class='imagenes'><a href='editar_clientes.php'?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->correo&password=$obj->password&Fecha_Alta=$obj->Fecha_Alta'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_cliente.php'?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->correo&password=$obj->password&Fecha_Alta=$obj->Fecha_Alta'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+              </td>";
+        echo "</tr>";
+    }
+
+    //Free the result. Avoid High Memory Usages
+    $result->close();
+    unset($obj);
+    unset($connection);
+
+} //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
+
+?>
+  </div>
+</div>
 
 </html>
 

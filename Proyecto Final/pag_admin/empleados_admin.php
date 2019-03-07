@@ -21,7 +21,75 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 </head>
 
   <?php include_once 'menu_admin.php'?>
- 
+
+  
+<div class="row">      
+  <div id="tabla" class="col-md-12">
+    
+
+<?php
+
+//CREATING THE CONNECTION
+$connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
+$connection->set_charset("utf8");
+
+//TESTING IF THE CONNECTION WAS RIGHT
+if ($connection->connect_errno) {
+    printf("Connection failed: %s\n", $connection->connect_error);
+    exit();
+}
+
+//MAKING A SELECT QUERY
+/* Consultas de selección que devuelven un conjunto de resultados */
+if ($result = $connection->query("select * from empleados;")) {
+
+   echo "<table class='table table-hover'>";
+    ?>
+    <thead>
+      <tr>
+        <th>CodEmpleado</th>
+        <th>DNI</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Fecha Alta</th>
+        <th>Categoría</th>
+        <th><a href='anadir_empleado.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
+      </tr>
+    </thead>
+
+<?php
+
+    //FETCHING OBJECTS FROM THE RESULT SET
+    //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
+    while($obj = $result->fetch_object()) {
+        //PRINTING EACH ROW
+        echo "<tr>";
+        echo "<td>".$obj->CodEmpleado."</td>";
+        echo "<td>".$obj->DNI."</td>";
+        echo "<td>".$obj->Nombre."</td>";
+        echo "<td>".$obj->Apellidos."</td>";
+        echo "<td>".$obj->Telefono."</td>";
+        echo "<td>".$obj->Correo."</td>";
+        echo "<td>".$obj->FechaAlta."</td>";
+        echo "<td>".$obj->Categoria."</td>";
+        echo "<td><a method='POST' action='clientes_admin.php' href='editar_empleados.php'?CodEmpleado=$obj->CodEmpleado&DNI=$obj->DNI&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Telefono=$obj->Telefono&Correo=$obj->Correo&FechaAlta=$obj->FechaAlta&Categoria=$obj->Categoria'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_empleados.php'?CodEmpleado=$obj->CodEmpleado&DNI=$obj->DNI&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Telefono=$obj->Telefono&Correo=$obj->Correo&FechaAlta=$obj->FechaAlta&Categoria=$obj->Categoria'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+              </td>";
+        echo "</tr>";
+    }
+
+    //Free the result. Avoid High Memory Usages
+    $result->close();
+    unset($obj);
+    unset($connection);
+
+} //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
+
+?>
+  </div>
+</div>
 
 </html>
 

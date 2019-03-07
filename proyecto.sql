@@ -18,6 +18,7 @@
 --
 -- Table structure for table `clientes`
 --
+
 drop database if exists proyecto;
 create database proyecto;
 use proyecto;
@@ -33,7 +34,7 @@ CREATE TABLE `clientes` (
   `password` varchar(40) DEFAULT NULL,
   `Fecha_Alta` date DEFAULT NULL,
   PRIMARY KEY (`CodCliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +43,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES ('','aaa',NULL,'aaa','47bce5c74f589f4867dbd57e9ca9f808','2019-03-05'),('1','user','user','user@user.com','ee11cbb19052e40b07aac0ca060c23ee','2019-03-04'),('2','admin','admin','admin@admin.com','21232f297a57a5a743894a0e4a801fc3','2019-03-04');
+INSERT INTO `clientes` VALUES (1,'user','user','user@user.com','ee11cbb19052e40b07aac0ca060c23ee','2019-03-04'),(2,'admin','admin','admin@admin.com','21232f297a57a5a743894a0e4a801fc3','2019-03-04');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,13 +55,12 @@ DROP TABLE IF EXISTS `empleados`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `empleados` (
-  `CodEmpleado` varchar(5) NOT NULL,
-  `DNI` varchar(25) DEFAULT NULL,
+  `CodEmpleado` int(11) NOT NULL AUTO_INCREMENT,
+  `DNI` varchar(9) DEFAULT NULL,
   `Nombre` varchar(25) DEFAULT NULL,
   `Apellidos` varchar(50) DEFAULT NULL,
-  `Direccion` varchar(50) DEFAULT NULL,
   `Telefono` varchar(9) DEFAULT NULL,
-  `CP` varchar(5) DEFAULT NULL,
+  `Correo` varchar(40) DEFAULT NULL,
   `FechaAlta` date DEFAULT NULL,
   `Categoria` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CodEmpleado`)
@@ -84,9 +84,9 @@ DROP TABLE IF EXISTS `recambios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `recambios` (
-  `IdRecambio` varchar(10) NOT NULL,
+  `IdRecambio` int(11) NOT NULL AUTO_INCREMENT,
   `Descripcion` varchar(100) DEFAULT NULL,
-  `UnidadBase` varchar(50) DEFAULT NULL,
+  `Proveedor` varchar(50) DEFAULT NULL,
   `Stock` smallint(6) DEFAULT NULL,
   `PrecioReferencia` decimal(6,2) DEFAULT NULL,
   PRIMARY KEY (`IdRecambio`)
@@ -112,15 +112,11 @@ DROP TABLE IF EXISTS `reparaciones`;
 CREATE TABLE `reparaciones` (
   `IdReparacion` int(11) NOT NULL AUTO_INCREMENT,
   `Matricula` varchar(8) NOT NULL,
-  `FechaEntrada` date DEFAULT NULL,
   `km` decimal(8,2) DEFAULT NULL,
+  `FechaEntrada` date DEFAULT NULL,  
   `Averia` varchar(200) DEFAULT NULL,
   `FechaSalida` date DEFAULT NULL,
-  `Reparado` tinyint(1) DEFAULT NULL,
-  `Observaciones` varchar(250) DEFAULT NULL,
-  RIMARY KEY (`IdReparacion`),
-  KEY `REPAR_FK_CodRep` (`Matricula`),
-  CONSTRAINT `REPAR_FK_CodRep` FOREIGN KEY (`Matricula`) REFERENCES `vehiculos` (`Matricula`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`IdReparacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -148,8 +144,6 @@ CREATE TABLE `vehiculos` (
   `FechaMatriculacion` date DEFAULT NULL,
   `CodCliente` varchar(5) DEFAULT NULL,
   PRIMARY KEY (`Matricula`)
-  KEY `VEHIC_FK_CodCli` (`CodCliente`),
-  CONSTRAINT `VEHIC_FK_CodCli` FOREIGN KEY (`CodCliente`) REFERENCES `clientes` (`CodCliente`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -171,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-05 13:10:15
+-- Dump completed on 2019-03-07 16:01:45
