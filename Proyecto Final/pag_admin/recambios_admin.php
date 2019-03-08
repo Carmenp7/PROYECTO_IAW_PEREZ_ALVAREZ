@@ -67,8 +67,8 @@ if ($result = $connection->query("select * from recambios;")) {
         echo "<td>".$obj->Proveedor."</td>";
         echo "<td>".$obj->Stock."</td>";
         echo "<td>".$obj->PrecioReferencia."</td>";
-        echo "<td class='imagenes'><a href='editar_recambios.php'?IdRecambio=$obj->IdRecambio&Descripcion=$obj->Descripcion&Proveedor=$obj->Proveedor&Stock=$obj->Stock&PrecioReferencia=$obj->PrecioReferencia'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
-                  <a href='eliminar_recambios.php'?IdRecambio=$obj->IdRecambio&Descripcion=$obj->Descripcion&Proveedor=$obj->Proveedor&Stock=$obj->Stock&PrecioReferencia=$obj->PrecioReferencia'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+        echo "<td class='imagenes'><a href='editar_recambios.php?IdRecambio=$obj->IdRecambio'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_recambios.php?IdRecambio=$obj->IdRecambio'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";
     }

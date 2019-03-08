@@ -67,8 +67,8 @@ if ($result = $connection->query("select * from vehiculos;")) {
         echo "<td>".$obj->Modelo."</td>";
         echo "<td>".$obj->FechaMatriculacion."</td>";
         echo "<td>".$obj->CodCliente."</td>";
-        echo "<td class='imagenes'><a href='editar_vehiculos.php'?Matricula=$obj->Matricula&Marca=$obj->Marca&Modelo=$obj->Modelo&FechaMatriculacion=$obj->FechaMatriculacion&CodCliente=$obj->CodCliente'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
-                  <a href='eliminar_vehiculos.php'?Matricula=$obj->Matricula&Marca=$obj->Marca&Modelo=$obj->Modelo&FechaMatriculacion=$obj->FechaMatriculacion&CodCliente=$obj->CodCliente'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+        echo "<td class='imagenes'><a href='editar_vehiculos.php?IdVehiculo=$obj->IdVehiculo'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_vehiculos.php?IdVehiculo=$obj->IdVehiculo'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";
     }

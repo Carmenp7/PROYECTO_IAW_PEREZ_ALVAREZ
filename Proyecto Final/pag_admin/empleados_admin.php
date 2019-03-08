@@ -74,8 +74,8 @@ if ($result = $connection->query("select * from empleados;")) {
         echo "<td>".$obj->Correo."</td>";
         echo "<td>".$obj->FechaAlta."</td>";
         echo "<td>".$obj->Categoria."</td>";
-        echo "<td><a method='POST' action='clientes_admin.php' href='editar_empleados.php'?CodEmpleado=$obj->CodEmpleado&DNI=$obj->DNI&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Telefono=$obj->Telefono&Correo=$obj->Correo&FechaAlta=$obj->FechaAlta&Categoria=$obj->Categoria'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
-                  <a href='eliminar_empleados.php'?CodEmpleado=$obj->CodEmpleado&DNI=$obj->DNI&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Telefono=$obj->Telefono&Correo=$obj->Correo&FechaAlta=$obj->FechaAlta&Categoria=$obj->Categoria'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+        echo "<td class='imagenes'><a href='editar_empleados.php?CodEmpleado=$obj->CodEmpleado'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_empleados.php?CodEmpleado=$obj->CodEmpleado'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";
     }

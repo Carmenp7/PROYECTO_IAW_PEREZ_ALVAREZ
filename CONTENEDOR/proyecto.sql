@@ -1,3 +1,20 @@
+GRANT ALL ON *.* TO 'root'@'localhost' IDENTIFIED BY "2asirtriana";
+GRANT ALL ON *.* TO 'root'@'127.0.0.1' IDENTIFIED BY "2asirtriana";
+GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY "2asirtriana";
+GRANT ALL ON proyecto.* TO 'root'@'localhost' IDENTIFIED BY "2asirtriana";
+GRANT ALL ON proyecto.* TO 'root'@'127.0.0.1' IDENTIFIED BY "2asirtriana";
+GRANT ALL ON proyecto.* TO 'root'@'%' IDENTIFIED BY "2asirtriana";
+CREATE USER 'user'@'localhost' IDENTIFIED BY '2asirtriana';
+CREATE USER 'user'@'127.0.0.1' IDENTIFIED BY '2asirtriana';
+CREATE USER 'user'@'%' IDENTIFIED BY '2asirtriana';
+GRANT SELECT,UPDATE,DELETE,INSERT ON *.* TO 'user'@'localhost' IDENTIFIED BY "2asirtriana";
+GRANT SELECT,UPDATE,DELETE,INSERT ON *.* TO 'user'@'127.0.0.1' IDENTIFIED BY "2asirtriana";
+GRANT SELECT,UPDATE,DELETE,INSERT ON *.* TO 'user'@'%' IDENTIFIED BY "2asirtriana";
+GRANT SELECT,UPDATE,DELETE,INSERT ON proyecto.* TO 'user'@'localhost' IDENTIFIED BY "2asirtriana";
+GRANT SELECT,UPDATE,DELETE,INSERT ON proyecto.* TO 'user'@'127.0.0.1' IDENTIFIED BY "2asirtriana";
+GRANT SELECT,UPDATE,DELETE,INSERT ON proyecto.* TO 'user'@'%' IDENTIFIED BY "2asirtriana";
+FLUSH PRIVILEGES;
+
 -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: proyecto

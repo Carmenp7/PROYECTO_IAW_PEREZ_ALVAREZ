@@ -1,4 +1,5 @@
-<?php session_start();
+
+ <?php session_start();
 
 if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 
@@ -9,7 +10,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="clientes_admin.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="reparaciones_admin.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,12 +22,12 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 </head>
 
   <?php include_once 'menu_admin.php'?>
-
-  
-<div class="row">      
+ 
+  <div class="row">      
   <div id="tabla" class="col-md-12">
     
-  <?php
+
+<?php
 
 //CREATING THE CONNECTION
 $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
@@ -40,22 +41,19 @@ if ($connection->connect_errno) {
 
 //MAKING A SELECT QUERY
 /* Consultas de selección que devuelven un conjunto de resultados */
-if ($result = $connection->query("select * from clientes;")) {
+if ($result = $connection->query("select * from reparaciones;")) {
 
-   echo "<table method='post' class='table table-hover'>";
+   echo "<table class='table table-hover'>";
     ?>
     <thead>
       <tr>
-        <th>CodCliente</th>
-        <th>Nombre</th>
-        <th>Apellidos</th>
-        <th>Correo</th>
-        <th>password</th>
-        <th>Fecha Alta</th>
-        <th>
-          <a href='anadir_clientes.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a>
-          <?php include_once 'añadir_clientes.php'?>        
-        </th>     
+        <th>IdReparacion</th>
+        <th>Matrícula</th>
+        <th>KM</th>
+        <th>Averia</th>
+        <th>Fecha de Entrada</th>
+        <th>Fecha de salida</th>
+        <th><a href='anadir_reparaciones.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
       </tr>
     </thead>
 
@@ -66,14 +64,14 @@ if ($result = $connection->query("select * from clientes;")) {
     while($obj = $result->fetch_object()) {
         //PRINTING EACH ROW
         echo "<tr>";
-        echo "<td>".$obj->CodCliente."</td>";
-        echo "<td>".$obj->Nombre."</td>";
-        echo "<td>".$obj->Apellido."</td>";
-        echo "<td>".$obj->Correo."</td>";
-        echo "<td>".$obj->password."</td>";
-        echo "<td>".$obj->Fecha_Alta."</td>";
-        echo "<td class='imagenes'><a method='post' href='editar_clientes.php?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->Correo&password=$obj->password&Fecha_Alta=$obj->Fecha_Alta'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
-                  <a href='eliminar_cliente.php?CodCliente=$obj->CodCliente'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+        echo "<td>".$obj->IdReparacion."</td>";
+        echo "<td>".$obj->Matricula."</td>";
+        echo "<td>".$obj->km."</td>";
+        echo "<td>".$obj->Averia."</td>";
+        echo "<td>".$obj->FechaEntrada."</td>";
+        echo "<td>".$obj->FechaSalida."</td>";
+        echo "<td class='imagenes'><a href='editar_reparaciones.php?IdReparacion=$obj->IdReparacion'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_reparaciones.php?IdReparacion=$obj->IdReparacion'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";
     }
@@ -88,6 +86,7 @@ if ($result = $connection->query("select * from clientes;")) {
 ?>
   </div>
 </div>
+
 
 </html>
 

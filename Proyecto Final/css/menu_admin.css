@@ -1,7 +1,13 @@
   #Menu
   
-  a.menuadmin{
+  a.menu{
     color:white;
+    font-family: "Tahoma", "Geneva", sans-serif; 
+    margin-bottom:0px;
+
+  }
+  .nav-link:hover{
+    color:black;
     font-family: "Tahoma", "Geneva", sans-serif; 
     margin-bottom:0px; 
   }
@@ -26,6 +32,7 @@
 
   img#usuario{
     margin-top:25px;
+    margin-left:10px;
     width:38px;
     height:38px;
   }
@@ -42,7 +49,7 @@
     text-align: right;
   }
   
-
+  
   .nav-list li.nav-list-item {
     display: inline-block;
     line-height: 40px;
@@ -65,8 +72,8 @@
   }
   
   .nav-list{
-    padding-left:270px;
-    padding-right:200px;
+    padding-left:210px;
+    padding-right:100px;
     margin-top:20px;
     margin-bottom:0px;
   }
@@ -74,4 +81,9 @@
 div.row hr{
     margin-top: 30px;;
     border-top: 1px solid white;
+}
+form#salir{
+  margin-right:50px;
+  float:right;
+  width: 50px;
 }

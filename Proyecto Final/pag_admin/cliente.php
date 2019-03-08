@@ -1,7 +1,7 @@
 <?php session_start();
 
 if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
-
+<?php ob_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -19,14 +19,15 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
+    <body>
 
-  <?php include_once 'menu_admin.php'?>
+        <?php include_once "menu_admin.php"?>
 
-  
-<div class="row">      
-  <div id="tabla" class="col-md-12">
     
-  <?php
+    <div class="row">      
+    <div id="tabla" class="col-md-12">
+
+<?php
 
 //CREATING THE CONNECTION
 $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
@@ -42,7 +43,7 @@ if ($connection->connect_errno) {
 /* Consultas de selección que devuelven un conjunto de resultados */
 if ($result = $connection->query("select * from clientes;")) {
 
-   echo "<table method='post' class='table table-hover'>";
+   echo " <table class='table custab''>";
     ?>
     <thead>
       <tr>
@@ -50,13 +51,9 @@ if ($result = $connection->query("select * from clientes;")) {
         <th>Nombre</th>
         <th>Apellidos</th>
         <th>Correo</th>
-        <th>password</th>
-        <th>Fecha Alta</th>
-        <th>
-          <a href='anadir_clientes.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a>
-          <?php include_once 'añadir_clientes.php'?>        
-        </th>     
-      </tr>
+        <th>Password</th>
+        <th>Fecha Alta</th>      
+       </tr>
     </thead>
 
 <?php
@@ -68,13 +65,12 @@ if ($result = $connection->query("select * from clientes;")) {
         echo "<tr>";
         echo "<td>".$obj->CodCliente."</td>";
         echo "<td>".$obj->Nombre."</td>";
-        echo "<td>".$obj->Apellido."</td>";
+        echo "<td>".$obj->Apellidos."</td>";
         echo "<td>".$obj->Correo."</td>";
-        echo "<td>".$obj->password."</td>";
+        echo "<td>".$obj->Password."</td>";
         echo "<td>".$obj->Fecha_Alta."</td>";
-        echo "<td class='imagenes'><a method='post' href='editar_clientes.php?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->Correo&password=$obj->password&Fecha_Alta=$obj->Fecha_Alta'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
-                  <a href='eliminar_cliente.php?CodCliente=$obj->CodCliente'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
-              </td>";
+        echo "<td><a href='editar_clientes.php?CodCliente=$obj->CodCliente&Nombre=$obj->Nombre&Apellidos=$obj->Apellidos&Correo=$obj->Correo&Password=$obj->Password&Fecha_Alta=$obj->Fecha_Alta'>Editar usuario</a></td>";
+
         echo "</tr>";
     }
 
@@ -86,9 +82,11 @@ if ($result = $connection->query("select * from clientes;")) {
 } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
 
 ?>
-  </div>
+
+</div>
 </div>
 
+</body>
 </html>
 
 <?php } else {

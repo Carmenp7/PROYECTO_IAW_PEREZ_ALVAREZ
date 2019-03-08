@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -15,7 +16,15 @@
       </div>
     </nav>
     <div class="col-md-2">
-      <img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"/>
+    <a href="perfil_admin.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
+      
+      <?php 
+        
+        if (!isset($_POST["cerrar"])) : ?>
+        <form id="salir" method="post">
+        <a  href="/Proyecto%20Final/login.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/logout.png"/></a>
+        </form>
+      
     <div>
   </div>
 </div>
@@ -33,7 +42,10 @@
           <a href="recambios_admin.php"  id="menu" class="nav-link">Recambios</a>
         </li>
         <li class="nav-list-item">
-          <a href="vehiculos_admin.php"  id="menu" class="nav-link">Vehículos</a>
+          <a href="vehiculos_admin.php"  id="menu" class="nav-link">Coches</a>
+        </li>
+        <li class="nav-list-item">
+          <a href="reparaciones_admin.php"  id="menu" class="nav-link">Reparaciones</a>
         </li>
       </ul>
     </nav>
@@ -44,3 +56,11 @@
 <hr id="separador" aling="left" noshade="noshade" size="4" width="80%" />
 </div>
 </div>
+<?php else: ?>
+<?php
+        session_destroy();
+        header("Location: ../login.php");
+
+?>
+
+<?php endif?></li>

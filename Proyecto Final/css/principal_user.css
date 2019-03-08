@@ -1,6 +1,6 @@
 html,body {
   height: 100%;
-  background-image:url(/Proyecto\ Final/IMAGENES/principal_user.jpg);
+  background-image:url(/Proyecto\ Final/IMAGENES/principal_admin.jpg);
   position: absolute;
   top: 0;
   left: 0;
@@ -11,31 +11,29 @@ html,body {
   height: 100%;
 }
 
+.container{
+  margin-top:20px;
+}
+
 #Menu
-a.menu{
+a.menuadmin{
   color:white;
-  font-family: 'Numans', sans-serif;  
+  font-family: "Tahoma", "Geneva", sans-serif; 
+  margin-bottom:0px; 
 }
 a.nav-link{
   text-decoration: none;
   font-size: 18px;
-  font-weight: 500;
   cursor: pointer;
   position: relative;
   color: white;
-  font-family: 'Numans', sans-serif;
+  font-family: "Tahoma", "Geneva", sans-serif;
+  margin-bottom:0px;
 }
 
-
-<!-- a.navbar-brand {
-  float: left;
-  color:white;
-  font-family: 'Numans', sans-serif;
-} -->
-
-img.navbar-brand{
-  float: left;
-  width:100px;
+#logo{
+float: left;
+width:300px;
 }
 
 nav.main-navigation {
@@ -55,17 +53,38 @@ nav.main-navigation ul.nav-list {
   line-height: 40px;
   margin-left: 30px;
   margin-top: 15px;
+  margin-bottom:0px;
 }
 
-#Carousel
-.carousel-item {
-  display: block;
-  width: 100%;
-  height: 100px;
-}
-.carousel-item img {
-  height: 100px;
-  width: 100px;
+div.row{
+  height: 50px;
+  margin-bottom:0px;
 }
 
+nav.col-md-10{
+  height: 100px;
+}
+
+.col-md-2{
+  height: 100px;
+}
+
+.col-md-2 img{
+margin-top:25px;
+width:38px;
+height:38px;
+}
+
+.nav-list{
+  padding-left:250px;
+  padding-right:200px;
+  margin-bottom:0px;
+}
+
+hr{
+  margin-bottom: 100px;;
+  border: 0;
+  border-top: 1px solid white;
+
+}
 
