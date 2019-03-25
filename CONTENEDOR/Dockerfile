@@ -8,7 +8,7 @@ ADD iniciarservicios.sh /usr/bin/
 RUN apt-get install -y git
 WORKDIR /var/www/html/
 RUN rm -rf index.html
-RUN echo "<?php header('Location: ./PROYECTO_IAW_PEREZ_ALVAREZ/index.php')?>" > index.php
+RUN echo "<?php header('Location: ./PROYECTO_IAW_PEREZ_ALVAREZ/Proyecto%20Final/index.php')?>" > index.php
 #Clonacion del repositorio
 RUN echo "Clonacion de repositorio";
 RUN git clone https://github.com/Carmenp7/PROYECTO_IAW_PEREZ_ALVAREZ.git

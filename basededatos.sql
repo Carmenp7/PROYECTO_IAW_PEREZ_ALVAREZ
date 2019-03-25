@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: proyecto
 -- ------------------------------------------------------
--- Server version	5.5.41-0ubuntu0.14.04.1
+-- Server version	5.7.25-0ubuntu0.16.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,9 +18,9 @@
 --
 -- Table structure for table `clientes`
 --
-drop database if exists proyecto;
-create database proyecto;
-use proyecto;
+drop database if exists basededatos;
+create database basededatos;
+use basededatos;
 
 DROP TABLE IF EXISTS `clientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -41,39 +41,34 @@ CREATE TABLE `clientes` (
 --
 
 LOCK TABLES `clientes` WRITE;
-/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'user','user','user@user.com','ee11cbb19052e40b07aac0ca060c23ee','2019-03-04'),(2,'admin','admin','admin@admin.com','21232f297a57a5a743894a0e4a801fc3','2019-03-04'),(3,'carmen','carmen','carmen@carmen','880cbc1ed48043cbcdaa7286e058ef7f','2019-03-08');
-/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+
 UNLOCK TABLES;
 
 --
--- Table structure for table `empleados`
+-- Table structure for table `incluyen`
 --
 
-DROP TABLE IF EXISTS `empleados`;
+DROP TABLE IF EXISTS `incluyen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `empleados` (
-  `CodEmpleado` int(11) NOT NULL AUTO_INCREMENT,
-  `DNI` varchar(9) DEFAULT NULL,
-  `Nombre` varchar(25) DEFAULT NULL,
-  `Apellidos` varchar(50) DEFAULT NULL,
-  `Telefono` varchar(9) DEFAULT NULL,
-  `Correo` varchar(40) DEFAULT NULL,
-  `FechaAlta` date DEFAULT NULL,
-  `Categoria` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`CodEmpleado`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+CREATE TABLE `incluyen` (
+  `IdRecambio` int(11) NOT NULL,
+  `IdReparacion` int(11) NOT NULL,
+  `Unidades` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`IdRecambio`,`IdReparacion`),
+  KEY `IdRep` (`IdReparacion`),
+  CONSTRAINT `IdRec` FOREIGN KEY (`IdRecambio`) REFERENCES `recambios` (`IdRecambio`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `IdRep` FOREIGN KEY (`IdReparacion`) REFERENCES `reparaciones` (`IdReparacion`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `empleados`
+-- Dumping data for table `incluyen`
 --
 
-LOCK TABLES `empleados` WRITE;
-/*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
-INSERT INTO `empleados` VALUES (1,'15414403X','Carmen','Pérez','675564432','carmen@carmen','2019-03-08','Inyección');
-/*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
+LOCK TABLES `incluyen` WRITE;
+/*!40000 ALTER TABLE `incluyen` DISABLE KEYS */;
+/*!40000 ALTER TABLE `incluyen` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -88,7 +83,7 @@ CREATE TABLE `recambios` (
   `Descripcion` varchar(100) DEFAULT NULL,
   `Proveedor` varchar(50) DEFAULT NULL,
   `Stock` smallint(6) DEFAULT NULL,
-  `PrecioReferencia` decimal(6,2) DEFAULT NULL,
+  `PrecioReferencia` decimal(6,6) DEFAULT NULL,
   PRIMARY KEY (`IdRecambio`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -99,7 +94,6 @@ CREATE TABLE `recambios` (
 
 LOCK TABLES `recambios` WRITE;
 /*!40000 ALTER TABLE `recambios` DISABLE KEYS */;
-INSERT INTO `recambios` VALUES (1,'Aceite','Lausan',2,23.00);
 /*!40000 ALTER TABLE `recambios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +111,9 @@ CREATE TABLE `reparaciones` (
   `FechaEntrada` date DEFAULT NULL,
   `Averia` varchar(200) DEFAULT NULL,
   `FechaSalida` date DEFAULT NULL,
-  PRIMARY KEY (`IdReparacion`)
+  PRIMARY KEY (`IdReparacion`),
+  KEY `Matri` (`Matricula`),
+  CONSTRAINT `Matri` FOREIGN KEY (`Matricula`) REFERENCES `vehiculos` (`Matricula`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -127,7 +123,6 @@ CREATE TABLE `reparaciones` (
 
 LOCK TABLES `reparaciones` WRITE;
 /*!40000 ALTER TABLE `reparaciones` DISABLE KEYS */;
-INSERT INTO `reparaciones` VALUES (1,'S3030',0.00,'2002-12-01','Calentadores','2002-12-01');
 /*!40000 ALTER TABLE `reparaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,15 +134,16 @@ DROP TABLE IF EXISTS `vehiculos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `vehiculos` (
-  `IdVehiculo` int(11) NOT NULL AUTO_INCREMENT,
   `Matricula` varchar(8) NOT NULL,
   `Marca` varchar(25) DEFAULT NULL,
   `Modelo` varchar(50) DEFAULT NULL,
   `Color` varchar(50) DEFAULT NULL,
   `FechaMatriculacion` date DEFAULT NULL,
-  `CodCliente` varchar(5) DEFAULT NULL,
-  PRIMARY KEY (`IdVehiculo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `CodCliente` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Matricula`),
+  KEY `CodCli` (`CodCliente`),
+  CONSTRAINT `CodCli` FOREIGN KEY (`CodCliente`) REFERENCES `clientes` (`CodCliente`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -156,7 +152,6 @@ CREATE TABLE `vehiculos` (
 
 LOCK TABLES `vehiculos` WRITE;
 /*!40000 ALTER TABLE `vehiculos` DISABLE KEYS */;
-INSERT INTO `vehiculos` VALUES (2,'4370FGH','BMW','E46','Rojo','2019-03-08','2');
 /*!40000 ALTER TABLE `vehiculos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -169,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-08 23:10:55
+-- Dump completed on 2019-03-25 10:12:03
