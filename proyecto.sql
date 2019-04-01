@@ -2,7 +2,7 @@
 --
 -- Host: 127.0.0.1    Database: proyecto
 -- ------------------------------------------------------
--- Server version	5.7.25-0ubuntu0.16.04.2
+-- Server version	5.5.41-0ubuntu0.14.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -18,9 +18,9 @@
 --
 -- Table structure for table `clientes`
 --
-drop database if exists basededatos;
-create database basededatos;
-use basededatos;
+drop database if exists proyecto;
+create database proyecto;
+use proyecto;
 
 DROP TABLE IF EXISTS `clientes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -33,7 +33,7 @@ CREATE TABLE `clientes` (
   `password` varchar(40) DEFAULT NULL,
   `Fecha_Alta` date DEFAULT NULL,
   PRIMARY KEY (`CodCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4570 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,9 @@ CREATE TABLE `clientes` (
 --
 
 LOCK TABLES `clientes` WRITE;
-
+/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES (1,'user','user','user@user.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31'),(2,'admin','admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31'),(3,'Rafael','Diaz Gonzalez','rafa@rafa.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31');
+/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -83,9 +85,9 @@ CREATE TABLE `recambios` (
   `Descripcion` varchar(100) DEFAULT NULL,
   `Proveedor` varchar(50) DEFAULT NULL,
   `Stock` smallint(6) DEFAULT NULL,
-  `PrecioReferencia` decimal(6,6) DEFAULT NULL,
+  `PrecioReferencia` decimal(6,2) DEFAULT NULL,
   PRIMARY KEY (`IdRecambio`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,6 +96,7 @@ CREATE TABLE `recambios` (
 
 LOCK TABLES `recambios` WRITE;
 /*!40000 ALTER TABLE `recambios` DISABLE KEYS */;
+INSERT INTO `recambios` VALUES (1,'Aceite','Ralsa',5,15.00),(2,'Filtro Antipolen','VALEO',2,10.00),(3,'Junta culata','BOSCH',2,35.00),(4,'Bomba aceite','BOSCH',4,115.00);
 /*!40000 ALTER TABLE `recambios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +117,7 @@ CREATE TABLE `reparaciones` (
   PRIMARY KEY (`IdReparacion`),
   KEY `Matri` (`Matricula`),
   CONSTRAINT `Matri` FOREIGN KEY (`Matricula`) REFERENCES `vehiculos` (`Matricula`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,6 +155,7 @@ CREATE TABLE `vehiculos` (
 
 LOCK TABLES `vehiculos` WRITE;
 /*!40000 ALTER TABLE `vehiculos` DISABLE KEYS */;
+INSERT INTO `vehiculos` VALUES ('2000 CVF','Peugeot','407','Gris oscuro','2007-07-10',2),('4569 BFC','BMW','320d','Rojo','2001-10-02',3),('9845 FCV','Renault','Clio IV','Blanco','2014-06-02',1);
 /*!40000 ALTER TABLE `vehiculos` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -164,4 +168,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-25 10:12:03
+-- Dump completed on 2019-04-01  0:16:00

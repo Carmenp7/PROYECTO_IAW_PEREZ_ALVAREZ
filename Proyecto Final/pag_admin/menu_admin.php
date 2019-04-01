@@ -16,7 +16,7 @@
       </div>
     </nav>
     <div class="col-md-2">
-    <a href="perfil_admin.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
+    <a href="perfil.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
       
       <?php 
         

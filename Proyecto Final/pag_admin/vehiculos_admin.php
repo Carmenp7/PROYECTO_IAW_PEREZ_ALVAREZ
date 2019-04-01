@@ -9,7 +9,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="recambios_admin.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="/Proyecto%20Final/css/vehiculos_admin.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -49,6 +49,7 @@ if ($result = $connection->query("select * from vehiculos;")) {
         <th>Matricula</th>
         <th>Marca</th>
         <th>Modelo</th>
+        <th>Color</th>
         <th>Fecha de Matriculación</th>
         <th>Cod Cliente</th>
         <th><a href='anadir_vehiculos.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
@@ -65,10 +66,11 @@ if ($result = $connection->query("select * from vehiculos;")) {
         echo "<td>".$obj->Matricula."</td>";
         echo "<td>".$obj->Marca."</td>";
         echo "<td>".$obj->Modelo."</td>";
+        echo "<td>".$obj->Color."</td>";
         echo "<td>".$obj->FechaMatriculacion."</td>";
         echo "<td>".$obj->CodCliente."</td>";
-        echo "<td class='imagenes'><a href='editar_vehiculos.php?IdVehiculo=$obj->IdVehiculo'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
-                  <a href='eliminar_vehiculos.php?IdVehiculo=$obj->IdVehiculo'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
+        echo "<td class='imagenes'><a href='editar_vehiculos.php?Matricula=$obj->Matricula&Marca=$obj->Marca&Modelo=$obj->Modelo&Color=$obj->Color&FechaMatriculacion=$obj->FechaMatriculacion&CodCliente=$obj->CodCliente'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+                  <a href='eliminar_vehiculos.php?Matricula=$obj->Matricula'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";
     }

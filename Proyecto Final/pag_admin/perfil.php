@@ -9,7 +9,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="eliminar_recambios.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="/Proyecto%20Final/css/perfil.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -54,7 +54,6 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
                         echo "<tr><td><b>Apellidos: </b></td><td>$obj->Apellidos</td></tr>";
                         echo "<tr><td><b>Correo: </b></td><td>$obj->Correo</td></tr>";
                         echo "<tr><td><b>Fecha de alta: </b></td><td>$obj->Fecha_Alta</td></tr>";
-                       
                         echo "</table>";
                     
                     

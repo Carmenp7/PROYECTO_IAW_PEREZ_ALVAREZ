@@ -1,6 +1,5 @@
-<?php session_start();
 
-if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
+<?php ob_start(); ?>
 
 <!DOCTYPE html> 
 <html>
@@ -8,7 +7,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/Proyecto%20Final/css/editar_clientes.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="/Proyecto%20Final/css/editar_recambios.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,31 +18,37 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
     <body>
+    <?php
+
+  //Open the session
+  session_start();
+
+  if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 
         <?php include_once "menu_admin.php"?>
  
     
     <div class="row">
         <div class="col-md-12">
-        <?php if (!isset($_POST["CodCliente"])) : ?>
+        <?php if (!isset($_POST["user"])) : ?>
             <form method="post">
                 <div class="row">
                 <div class="login-form">
                 <div class="main-div">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="CodCliente" placeholder="Codigo" required readonly="readonly" value="<?php echo $_GET['CodCliente']; ?>" >
+                        <input type="text" class="form-control" name="IdRecambio" placeholder="IdRecambio" readonly="readonly" value="<?php echo $_GET['IdRecambio']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Nombre" placeholder="Nombre" required value="<?php echo $_GET['Nombre']; ?>" >
+                        <input type="text" class="form-control" name="Descripcion" placeholder="Descripcion" value="<?php echo $_GET['Descripcion']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Apellidos" placeholder="Apellidos" required value="<?php echo $_GET['Apellidos']; ?>" >
+                        <input type="text" class="form-control" name="Proveedor" placeholder="Proveedor" value="<?php echo $_GET['Proveedor']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" name="Correo" placeholder="Correo" required value="<?php echo $_GET['Correo']; ?>">
+                        <input type="number" class="form-control" name="Stock" placeholder="Stock" value="<?php echo $_GET['Stock']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña" value="<?php echo $_GET['password']; ?>" >
+                        <input type="text" class="form-control" name="PrecioReferencia" placeholder="Precio" value="<?php echo $_GET['PrecioReferencia']; ?>">
                     </div>
                     <button type="submit" class="btn btn-primary">Editar</button>
                 </div>
@@ -63,31 +68,21 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 
             //MAKING A SELECT QUERY
             //Password coded with md5 at the database. Look for better options
+            $consulta="UPDATE recambios set Descripcion='$_POST[Descripcion]', Proveedor='$_POST[Proveedor]', Stock='$_POST[Stock]', PrecioReferencia=md5('$_POST[PrecioReferencia]')' 
+            where IdRecambio=$_GET[IdRecambio]";
 
 
-            $consulta="UPDATE clientes set Nombre='$_POST[Nombre]', Apellidos='$_POST[Apellidos]', Correo='$_POST[Correo]' where CodCliente='$_GET[CodCliente]'";
-
-            $consulta2="UPDATE clientes set Nombre='$_POST[Nombre]', Apellidos='$_POST[Apellidos]', Correo='$_POST[Correo]', password=md5('$_POST[password]') 
-            where CodCliente='$_GET[CodCliente]'";
-
-            if($_POST['password']==""){
-                $result =$connection->query($consulta);
-            } else {
-                $result =$connection->query($consulta2);
-            }
-
-
-            var_dump($consulta);
-
-                if ($result = $connection->query($consulta)) {
-                        header("Location: clientes_admin.php");
+            //Test if the query was correct
+            //SQL Injection Possible
+            //Check http://php.net/manual/es/mysqli.prepare.php for more security
+            
+                    if ($result = $connection->query($consulta)) {
+                        header("Location: recambios_admin.php");
                         
                     }
                 else {
-                        echo "<h1>Cliente no actualizado</h1>";
-                        header("refresh:3;url=editar_clientes.php");
-                    
-
+                        echo "<h1>Usuario no actulizado</h1>";
+                        header("refresh:3;url=editar_recambios.php");
                 } ?>
             <?php endif ?>
 
@@ -98,9 +93,6 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     session_destroy();
     header("Location: ../login.php");
   }
-
-
- ?>
-
+?>
 </body>
 </html>

@@ -19,6 +19,11 @@ div#tabla.col-md-12 {
     width:1080px;
 }
 
+td.imagenes{
+    width: 115px;
+    padding-left:0px;
+    padding-right:0px;
+}
 
 img.editar{
     width:40px;

@@ -9,7 +9,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="recambios_admin.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="/Proyecto%20Final/css/recambios_admin.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -51,7 +51,7 @@ if ($result = $connection->query("select * from recambios;")) {
         <th>Proveedor</th>
         <th>Stock</th>
         <th>Precio Referencia</th>
-        <th><a href='anadir_recambio.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
+        <th><a href='anadir_recambios.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
       </tr>
     </thead>
 
@@ -67,7 +67,7 @@ if ($result = $connection->query("select * from recambios;")) {
         echo "<td>".$obj->Proveedor."</td>";
         echo "<td>".$obj->Stock."</td>";
         echo "<td>".$obj->PrecioReferencia."</td>";
-        echo "<td class='imagenes'><a href='editar_recambios.php?IdRecambio=$obj->IdRecambio'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+        echo "<td class='imagenes'><a href='editar_recambios.php?IdRecambio=$obj->IdRecambio&Descripcion=$obj->Descripcion&Proveedor=$obj->Proveedor&Stock=$obj->Stock&PrecioReferencia=$obj->PrecioReferencia'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
                   <a href='eliminar_recambios.php?IdRecambio=$obj->IdRecambio'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";

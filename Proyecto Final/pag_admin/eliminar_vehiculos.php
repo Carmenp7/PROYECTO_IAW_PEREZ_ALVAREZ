@@ -9,7 +9,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="eliminar_vehiculos.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="/Proyecto%20Final/css/eliminar_clientes.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -25,14 +25,14 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
         <?php include_once "menu_admin.php"?>
 
 
-    <?php if (!isset($_POST["eliminar"])) : ?>
+    <?php if (!isset($_POST["borrar"])) : ?>
             <form method="post">
             <div class="row">
             <div class="login-form">
             <div class="main-div row">
                 <div id="pregunta"class="col-md-12" style="background-color: white; border-radius: 5px; margin-left: 250px; margin-top: 10px;">
-                    <center><h4>¿Estás seguro de eliminar este coche ?</h4></center>
-                    <center><input type="submit" name="eliminar" class="btn btn-primary" value="Eliminar" style="margin-bottom: 5px;"></center>
+                    <center><h4>¿Estás seguro de eliminar este coche?</h4></center>
+                    <center><input type="submit" name="borrar" class="btn btn-primary" value="Eliminar" style="margin-bottom: 5px;"></center>
                 </div>
             </div>
             </div>
@@ -49,26 +49,18 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
               printf("Connection failed: %s\n", $connection->connect_error);
               exit();
           }
-
-          //MAKING A SELECT QUERY
-          //Password coded with md5 at the database. Look for better options
-          $consulta="DELETE from vehiculos where IdVehiculo=$_GET[IdVehiculo]";
-
+          
+          $consulta="DELETE from vehiculos where Matricula=$_GET[Matricula]";
         
                 if ($result = $connection->query($consulta)) {
                     header("refresh:0;url=vehiculos_admin.php");
                 }
                else {
                     header("refresh:0;url=eliminar_vehiculos.php");
-
-                
+   
               }
           ?> 
           <?php endif ?>
-
-
-
-
 
 </body>
 </html>
