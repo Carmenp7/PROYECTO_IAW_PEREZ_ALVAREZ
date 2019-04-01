@@ -25,22 +25,22 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     
     <div>
     
-    <?php if (!isset($_POST["user"])) : ?>
+    <?php if (!isset($_POST["Descripcion"])) : ?>
         <form method="post">
             <div class="row">
             <div class="login-form">
             <div class="main-div">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control" name="Descripcion" placeholder="Descripcion" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Proveedor" placeholder="Proveedor">
+                    <input type="text" class="form-control" name="Proveedor" placeholder="Proveedor" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" name="Stock" placeholder="Stock">
+                    <input type="number" class="form-control" name="Stock" placeholder="Stock" required>
                 </div>
                 <div class="form-group">
-                    <input type="money" class="form-control" name="PrecioReferencia" placeholder="Precio">
+                    <input type="money" class="form-control" name="PrecioReferencia" placeholder="Precio" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Crear</button>
             </div>
@@ -84,7 +84,6 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
           } else {
             echo "Wrong Query";
           }
-   
     ?>
           <?php endif ?>
 

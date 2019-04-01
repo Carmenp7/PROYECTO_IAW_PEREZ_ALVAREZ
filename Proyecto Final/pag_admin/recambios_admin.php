@@ -50,7 +50,7 @@ if ($result = $connection->query("select * from recambios;")) {
         <th>Descripción</th>
         <th>Proveedor</th>
         <th>Stock</th>
-        <th>Precio Referencia</th>
+        <th>Precio</th>
         <th><a href='anadir_recambios.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
       </tr>
     </thead>

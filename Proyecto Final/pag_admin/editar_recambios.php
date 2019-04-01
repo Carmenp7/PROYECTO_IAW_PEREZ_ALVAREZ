@@ -30,25 +30,25 @@
     
     <div class="row">
         <div class="col-md-12">
-        <?php if (!isset($_POST["user"])) : ?>
+        <?php if (!isset($_POST["IdRecambio"])) : ?>
             <form method="post">
                 <div class="row">
                 <div class="login-form">
                 <div class="main-div">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="IdRecambio" placeholder="IdRecambio" readonly="readonly" value="<?php echo $_GET['IdRecambio']; ?>">
+                        <input type="text" class="form-control" name="IdRecambio" placeholder="IdRecambio" required readonly="readonly" value="<?php echo $_GET['IdRecambio']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Descripcion" placeholder="Descripcion" value="<?php echo $_GET['Descripcion']; ?>">
+                        <input type="text" class="form-control" name="Descripcion" placeholder="Descripcion" required value="<?php echo $_GET['Descripcion']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Proveedor" placeholder="Proveedor" value="<?php echo $_GET['Proveedor']; ?>">
+                        <input type="text" class="form-control" name="Proveedor" placeholder="Proveedor" required value="<?php echo $_GET['Proveedor']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="Stock" placeholder="Stock" value="<?php echo $_GET['Stock']; ?>">
+                        <input type="number" class="form-control" name="Stock" placeholder="Stock" required value="<?php echo $_GET['Stock']; ?>">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="PrecioReferencia" placeholder="Precio" value="<?php echo $_GET['PrecioReferencia']; ?>">
+                        <input type="text" class="form-control" name="PrecioReferencia" placeholder="Precio" required value="<?php echo $_GET['PrecioReferencia']; ?>">
                     </div>
                     <button type="submit" class="btn btn-primary">Editar</button>
                 </div>
@@ -68,7 +68,7 @@
 
             //MAKING A SELECT QUERY
             //Password coded with md5 at the database. Look for better options
-            $consulta="UPDATE recambios set Descripcion='$_POST[Descripcion]', Proveedor='$_POST[Proveedor]', Stock='$_POST[Stock]', PrecioReferencia=md5('$_POST[PrecioReferencia]')' 
+            $consulta="UPDATE recambios set Descripcion='$_POST[Descripcion]', Proveedor='$_POST[Proveedor]', Stock='$_POST[Stock]', PrecioReferencia='$_POST[PrecioReferencia]'
             where IdRecambio=$_GET[IdRecambio]";
 
 
