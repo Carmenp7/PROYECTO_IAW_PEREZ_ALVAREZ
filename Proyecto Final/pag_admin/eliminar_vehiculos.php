@@ -25,14 +25,14 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
         <?php include_once "menu_admin.php"?>
 
 
-    <?php if (!isset($_POST["borrar"])) : ?>
+    <?php if (!isset($_POST["eliminar"])) : ?>
             <form method="post">
             <div class="row">
             <div class="login-form">
             <div class="main-div row">
                 <div id="pregunta"class="col-md-12" style="background-color: white; border-radius: 5px; margin-left: 250px; margin-top: 10px;">
                     <center><h4>¿Estás seguro de eliminar este coche?</h4></center>
-                    <center><input type="submit" name="borrar" class="btn btn-primary" value="Eliminar" style="margin-bottom: 5px;"></center>
+                    <center><input type="submit" name="eliminar" class="btn btn-primary" value="Eliminar" style="margin-bottom: 5px;"></center>
                 </div>
             </div>
             </div>
@@ -50,7 +50,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
               exit();
           }
           
-          $consulta="DELETE from vehiculos where Matricula=$_GET[Matricula]";
+          $consulta="DELETE from vehiculos where Matricula='$_GET[Matricula]'";
         
                 if ($result = $connection->query($consulta)) {
                     header("refresh:0;url=vehiculos_admin.php");

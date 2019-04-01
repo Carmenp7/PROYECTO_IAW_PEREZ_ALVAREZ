@@ -30,28 +30,28 @@
     
     <div class="row">
         <div class="col-md-12">
-        <?php if (!isset($_POST["user"])) : ?>
+        <?php if (!isset($_POST["Matricula"])) : ?>
             <form method="post">
                 <div class="row">
                 <div class="login-form">
                 <div class="main-div">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Matricula" placeholder="Matricula" readonly="Matricula" value="<?php echo $_GET['Matricula']; ?>">
+                        <input type="text" class="form-control" name="Matricula" placeholder="Matricula" readonly="Matricula" value="<?php echo $_GET['Matricula']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Marca" placeholder="Marca" value="<?php echo $_GET['Marca']; ?>">
+                        <input type="text" class="form-control" name="Marca" placeholder="Marca" value="<?php echo $_GET['Marca']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Modelo" placeholder="Modelo" value="<?php echo $_GET['Modelo']; ?>">
+                        <input type="text" class="form-control" name="Modelo" placeholder="Modelo" value="<?php echo $_GET['Modelo']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="Color" placeholder="Color" value="<?php echo $_GET['Color']; ?>">
+                        <input type="text" class="form-control" name="Color" placeholder="Color" value="<?php echo $_GET['Color']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="date" class="form-control" name="FechaMatriculacion" placeholder="Fecha de Matriculacion" value="<?php echo $_GET['FechaMatriculacion']; ?>">
+                        <input type="date" class="form-control" name="FechaMatriculacion" placeholder="Fecha de Matriculacion" value="<?php echo $_GET['FechaMatriculacion']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="CodCliente" placeholder="Cliente" value="<?php echo $_GET['CodCliente']; ?>">
+                        <input type="number" class="form-control" name="CodCliente" placeholder="Cliente" value="<?php echo $_GET['CodCliente']; ?>" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Editar</button>
                 </div>
@@ -71,10 +71,10 @@
 
             //MAKING A SELECT QUERY
             //Password coded with md5 at the database. Look for better options
-            $consulta="UPDATE vehiculos set Marca='$_POST[Marca]', Modelo='$_POST[Modelo]', Color='$_POST[Color]', FechaMatriculacion=$_POST[PrecioReferencia]', CodCliente=$_POST[CodCliente]' 
-            where Matricula=$_GET[Matricula]";
+            $consulta="UPDATE vehiculos set Marca='$_POST[Marca]', Modelo='$_POST[Modelo]', Color='$_POST[Color]', FechaMatriculacion='$_POST[FechaMatriculacion]', CodCliente=$_POST[CodCliente] 
+            where Matricula='$_GET[Matricula]'";
 
-
+            var_dump($consulta);
             //Test if the query was correct
             //SQL Injection Possible
             //Check http://php.net/manual/es/mysqli.prepare.php for more security
@@ -84,7 +84,7 @@
                         
                     }
                 else {
-                        echo "<h1>Usuario no actulizado</h1>";
+                        echo "<h1>Vehiculo no actulizado</h1>";
                         header("refresh:3;url=editar_vehiculos.php");
                 } ?>
             <?php endif ?>

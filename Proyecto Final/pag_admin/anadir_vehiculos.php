@@ -25,28 +25,28 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     
     <div>
     
-    <?php if (!isset($_POST["user"])) : ?>
+    <?php if (!isset($_POST["Matricula"])) : ?>
         <form method="post">
             <div class="row">
             <div class="login-form">
             <div class="main-div">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Matricula" placeholder="Matricula">
+                    <input type="text" class="form-control" name="Matricula" placeholder="Matricula" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Marca" placeholder="Marca">
+                    <input type="text" class="form-control" name="Marca" placeholder="Marca" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Modelo" placeholder="Modelo">
+                    <input type="text" class="form-control" name="Modelo" placeholder="Modelo" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Color" placeholder="Color">
+                    <input type="text" class="form-control" name="Color" placeholder="Color" required>
                 </div>
                 <div class="form-group">
-                    <input type="date" class="form-control" name="FechaMatriculacion" placeholder="FechaMatriculacion">
+                    <input type="date" class="form-control" name="FechaMatriculacion" placeholder="FechaMatriculacion" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" class="form-control" name="CodCliente" placeholder="Cliente">
+                    <input type="number" class="form-control" name="CodCliente" placeholder="Cliente" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Crear</button>
             </div>
