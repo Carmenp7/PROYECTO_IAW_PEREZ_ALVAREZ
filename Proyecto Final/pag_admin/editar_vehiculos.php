@@ -19,7 +19,13 @@
 </head>
     <body>
     <?php
+        $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
 
+        //TESTING IF THE CONNECTION WAS RIGHT
+        if ($connection->connect_errno) {
+            printf("Connection failed: %s\n", $connection->connect_error);
+            exit();
+        }
   //Open the session
   session_start();
 
@@ -51,7 +57,20 @@
                         <input type="date" class="form-control" name="FechaMatriculacion" placeholder="Fecha de Matriculacion" value="<?php echo $_GET['FechaMatriculacion']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" name="CodCliente" placeholder="Cliente" value="<?php echo $_GET['CodCliente']; ?>" required>
+                        <?php
+                            echo "<select name='CodCliente' class='form-control' placeholder='Cliente'>";
+                            $query="SELECT * FROM clientes";
+                            if ($result=$connection->query($query)) {
+                                while($obj=$result->fetch_object()) {
+                                echo "<option value='".$obj->CodCliente."'>";
+                                echo $obj->Apellidos.", ".$obj->Nombre;
+                                echo "</option>";
+                            }
+                            } else {
+                                echo "NO SE HA PODIDO RECUPERAR DATOS DE LOS CLIENTES";
+                            }
+                            echo "</select>";
+                        ?>
                     </div>
                     <button type="submit" class="btn btn-primary">Editar</button>
                 </div>
@@ -61,14 +80,6 @@
 
             <?php else:?>
             <?php
-            $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
-
-            //TESTING IF THE CONNECTION WAS RIGHT
-            if ($connection->connect_errno) {
-                printf("Connection failed: %s\n", $connection->connect_error);
-                exit();
-            }
-
             //MAKING A SELECT QUERY
             //Password coded with md5 at the database. Look for better options
             $consulta="UPDATE vehiculos set Marca='$_POST[Marca]', Modelo='$_POST[Modelo]', Color='$_POST[Color]', FechaMatriculacion='$_POST[FechaMatriculacion]', CodCliente=$_POST[CodCliente] 

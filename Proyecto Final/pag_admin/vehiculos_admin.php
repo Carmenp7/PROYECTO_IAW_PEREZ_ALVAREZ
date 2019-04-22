@@ -20,12 +20,11 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
-  <?php include_once 'menu_admin.php'?>
+<?php include_once 'menu_admin.php'?>
  
-  <div class="row">      
-  <div id="tabla" class="col-md-12">
+<div class="row">      
+<div id="tabla" class="col-md-12">
     
-
 <?php
 
 //CREATING THE CONNECTION
@@ -43,7 +42,7 @@ if ($connection->connect_errno) {
 if ($result = $connection->query("select * from vehiculos;")) {
 
    echo "<table class='table table-hover'>";
-    ?>
+?>
     <thead>
       <tr>
         <th>Matricula</th>
@@ -51,7 +50,7 @@ if ($result = $connection->query("select * from vehiculos;")) {
         <th>Modelo</th>
         <th>Color</th>
         <th>Fecha de Matriculación</th>
-        <th>Cod Cliente</th>
+        <th>Datos Cliente</th>
         <th><a href='anadir_vehiculos.php'><img class="anadir" src='/Proyecto%20Final/IMAGENES/anadir_cliente.ico'/></a></th>     
       </tr>
     </thead>
@@ -68,7 +67,16 @@ if ($result = $connection->query("select * from vehiculos;")) {
         echo "<td>".$obj->Modelo."</td>";
         echo "<td>".$obj->Color."</td>";
         echo "<td>".$obj->FechaMatriculacion."</td>";
-        echo "<td>".$obj->CodCliente."</td>";
+        if ($result2 = $connection->query("select Nombre, Apellidos from clientes c join vehiculos v
+           on v.CodCliente=c.CodCliente where v.Matricula='$obj->Matricula';")) {
+           $obj2=$result2->fetch_object();
+            $Nombre=$obj2->Nombre;
+          $Apellidos=$obj2->Apellidos;
+            echo "<td>$Apellidos, $Nombre</td>";
+
+        } else {
+          echo "<td>"."No se han encontrado datos"."</td>";
+        }
         echo "<td class='imagenes'><a href='editar_vehiculos.php?Matricula=$obj->Matricula&Marca=$obj->Marca&Modelo=$obj->Modelo&Color=$obj->Color&FechaMatriculacion=$obj->FechaMatriculacion&CodCliente=$obj->CodCliente'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
                   <a href='eliminar_vehiculos.php?Matricula=$obj->Matricula'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
@@ -85,14 +93,10 @@ if ($result = $connection->query("select * from vehiculos;")) {
 ?>
   </div>
 </div>
-
-
 </html>
 
 <?php } else {
     session_destroy();
     header("Location: ../login.php");
   }
-
-
- ?>
+?>
