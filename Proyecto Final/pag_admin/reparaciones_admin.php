@@ -70,7 +70,7 @@ if ($result = $connection->query("select * from reparaciones;")) {
         echo "<td>".$obj->Averia."</td>";
         echo "<td>".$obj->FechaEntrada."</td>";
         echo "<td>".$obj->FechaSalida."</td>";
-        echo "<td class='imagenes'><a href='editar_reparaciones.php?IdReparacion=$obj->IdReparacion'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
+        echo "<td class='imagenes'><a href='editar_reparaciones.php?IdReparacion=$obj->IdReparacion&Matricula=$obj->Matricula&km=$obj->km&Averia=$obj->Averia&FechaEntrada=$obj->FechaEntrada&FechaSalida=$obj->FechaSalida'><img class='editar' src='/Proyecto%20Final/IMAGENES/editar_cliente.ico'/></a>
                   <a href='eliminar_reparaciones.php?IdReparacion=$obj->IdReparacion'><img class='editar' src='/Proyecto%20Final/IMAGENES/eliminar_cliente.ico'/></a>      
               </td>";
         echo "</tr>";

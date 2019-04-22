@@ -108,7 +108,7 @@ DROP TABLE IF EXISTS `reparaciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reparaciones` (
-  `IdReparacion` int(11) NOT NULL AUTO_INCREMENT,
+  `IdReparacion` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
   `Matricula` varchar(8) NOT NULL,
   `km` decimal(8,2) DEFAULT NULL,
   `FechaEntrada` date DEFAULT NULL,
