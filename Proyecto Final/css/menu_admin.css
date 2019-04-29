@@ -28,6 +28,7 @@
 
 .container{
     margin-top:20px;
+    height:600px;
 }
 
   img#usuario{
@@ -72,14 +73,14 @@
   }
   
   .nav-list{
-    padding-left:210px;
+    padding-left:230px;
     padding-right:100px;
     margin-top:20px;
     margin-bottom:0px;
   }
 
 div.row hr{
-    margin-top: 30px;;
+    margin-top: 145px;
     border-top: 1px solid white;
 }
 form#salir{

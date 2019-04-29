@@ -31,16 +31,16 @@
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">
       <li class="nav-list-item">
-          <a href="quienes_somos.php"  id="menu" class="nav-link">QUIENES SOMOS</a>
+          <a href="quienes_somos.php"  id="menu" class="nav-link">Quienes somos</a>
         </li>
         <li class="nav-list-item">
-          <a href="servicios.html"  id="menu" class="nav-link">SERVICIOS</a>
+          <a href="servicios.html"  id="menu" class="nav-link">Servicios</a>
         </li>
         <li class="nav-list-item">
-          <a href="Noticias.html"  id="menu" class="nav-link">NOTICIAS</a>
+          <a href="Noticias.html"  id="menu" class="nav-link">Noticias</a>
         </li>
         <li class="nav-list-item">
-          <a href=""  id="menu" class="nav-link">CONTACTO</a>
+          <a href=""  id="menu" class="nav-link">Contacto</a>
         </li>
       </ul>
     </nav>

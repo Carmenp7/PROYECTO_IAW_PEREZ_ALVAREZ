@@ -15,28 +15,19 @@
         <img src="/Proyecto%20Final/IMAGENES/logo.png" class="navbar-brand" id="logo" href="#"/>
       </div>
     </nav>
-    <div class="col-md-2">
+  <div class="col-md-2">
     <a href="perfil.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
       
-      <?php 
-        
-        if (!isset($_POST["cerrar"])) : ?>
+      <?php if (!isset($_POST["cerrar"])) : ?>
         <form id="salir" method="post">
         <a  href="/Proyecto%20Final/login.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/logout.png"/></a>
         </form>
-      
-    <div>
   </div>
-</div>
-<div class="container">
   <div class="row">
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">
       <li class="nav-list-item">
           <a href="clientes_admin.php"  id="menu" class="nav-link">Clientes</a>
-        </li>
-        <li class="nav-list-item">
-          <a href="empleados_admin.php"  id="menu" class="nav-link">Empleados</a>
         </li>
         <li class="nav-list-item">
           <a href="recambios_admin.php"  id="menu" class="nav-link">Recambios</a>
@@ -50,17 +41,14 @@
       </ul>
     </nav>
   </div>
-</div>
-<div class="container">
-<div class="row">
-<hr id="separador" aling="left" noshade="noshade" size="4" width="80%" />
-</div>
+  </div>
+  <div class="row">
+    <hr id="separador" aling="left" noshade="noshade" size="4" width="80%" />
+  </div>
 </div>
 <?php else: ?>
 <?php
-        session_destroy();
-        header("Location: ../login.php");
-
+    session_destroy();
+    header("Location: ../login.php");
 ?>
-
 <?php endif?></li>

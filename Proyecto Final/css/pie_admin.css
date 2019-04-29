@@ -1,0 +1,44 @@
+.pie{
+    margin-top:220px;
+    height:200px;
+    background-color:black;
+    margin-bottom: 0px;  
+    font-size: 15px;
+    color: white;
+    font-family: "Tahoma", "Geneva", sans-serif;
+}
+p{
+    display:block;
+    margin:auto;
+    padding-left:590px;
+}
+img#foto{
+    margin:0px;
+    width:200px;
+    display:block;
+    margin:auto;
+    padding-top:20px;
+}
+.social_icon{
+    margin-top:30px;
+    margin-left:1000px;
+}
+
+.social_icon span{
+    font-size: 30px;
+    margin-left: 10px;
+    color: #ff8533;
+    }
+    
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+        
+.input-group-prepend span{
+width: 50px;
+background-color: #ff8533;
+color: black;
+border:0 !important;
+}
+
