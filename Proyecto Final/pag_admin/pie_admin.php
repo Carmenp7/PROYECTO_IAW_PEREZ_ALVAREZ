@@ -12,5 +12,4 @@
 		<span><i class="fab fa-google-plus-square"></i></span>
 		<span><i class="fab fa-twitter-square"></i></span>
 	</div>
-
 </footer>

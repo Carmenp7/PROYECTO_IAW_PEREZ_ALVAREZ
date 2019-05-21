@@ -22,7 +22,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 
 <?php include_once 'menu_admin.php'?>
  
-<div class="row">      
+<div class="row" style='width: 1320px;'>      
 <div id="tabla" class="col-md-12">
     
 <?php
@@ -93,6 +93,8 @@ if ($result = $connection->query("select * from vehiculos;")) {
 ?>
   </div>
 </div>
+
+<?php include_once 'pie_admin.php'?>
 </html>
 
 <?php } else {
