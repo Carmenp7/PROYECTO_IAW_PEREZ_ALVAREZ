@@ -19,11 +19,8 @@
 </head>  
 
 <body>
-<?php include_once 'menu_admin.php'; ?>
+    <?php include_once 'menu_admin.php'; ?>
+
+    <?php include_once 'pie_admin.php'; ?>
 </body>
-
-
-<?php include_once 'pie_admin.php'; ?>
-
-
 </html>

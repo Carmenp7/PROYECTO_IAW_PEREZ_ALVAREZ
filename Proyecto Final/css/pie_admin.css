@@ -1,8 +1,8 @@
 .pie{
     margin-bottom: 0px; 
-    margin-top: 400px;
+    margin-top: 500px;
     margin-left:-20px;
-    width: 1350px;
+    width: 1351px;
     height:200px;
     background-color:black;
     font-size: 15px;
@@ -27,7 +27,7 @@ img#foto{
 }
 .social_icon{
     margin-top:30px;
-    margin-left:1000px;
+    margin-left:100px;
 }
 
 .social_icon span{
@@ -37,7 +37,7 @@ img#foto{
     }
     
 .social_icon span:hover{
-color: white;
+color: black;
 cursor: pointer;
 }
         

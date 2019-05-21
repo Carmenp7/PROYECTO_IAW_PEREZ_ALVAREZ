@@ -10,6 +10,10 @@ html,body {
     height: 100%;
 }
 
+div.login-form{
+    margin-left: 240px;
+    margin-top: 35px;
+}
 
 div#tabla.col-md-12 {
     border:0px;
