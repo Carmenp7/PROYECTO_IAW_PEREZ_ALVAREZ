@@ -1,6 +1,6 @@
 html,body {
   background-image:url(/Proyecto\ Final/IMAGENES/principal_admin.jpg);
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     background-position: center 0;
@@ -10,3 +10,32 @@ html,body {
     height: 100%;
 }
 
+p#mensaje{
+  padding:0px;
+  text-align:center;
+  font-size:70px;
+  color:white;
+  text-shadow: 3px 3px 3px #999999;
+  font-weight: bold;
+  font-family: Raleway ,sans-serif;
+}
+
+div.carousel-inner{
+  margin-left:75px;
+}
+
+h3.h3-responsive{
+  margin-left:0px;
+  font-family: Raleway,sans-serif;
+}
+
+div.carousel-caption{
+  left:0;
+  right:0;
+  text-align:left;
+}
+
+h3.h3-responsive{
+  margin-left:10px;
+  text-align:left;
+}

@@ -110,6 +110,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 
     </div>
 </body>
+<?php include_once 'pie_admin.php'; ?>
 </html>
 
 <?php } else {

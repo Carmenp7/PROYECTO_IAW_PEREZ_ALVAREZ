@@ -24,7 +24,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
 
         <?php include_once("menu_admin.php"); ?>
 
-        <div class="row">      
+        <div class="row" style='width:730px;'>      
             <div id="tabla" class="col-md-12">
             
 
@@ -69,12 +69,11 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
                 </div>
         </div>
     </body>
+    <?php include_once("pie_admin.php"); ?>
 </html>
 
 <?php } else {
     session_destroy();
     header("Location: ../login.php");
   }
-
-
- ?>
+?>

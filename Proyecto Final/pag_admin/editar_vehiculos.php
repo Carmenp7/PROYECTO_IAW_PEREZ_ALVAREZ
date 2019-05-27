@@ -103,10 +103,13 @@
         </div>
     </div>
 
+
+</body>
+<?php include_once 'pie_admin.php'; ?>
+</html>
+
 <?php } else {
     session_destroy();
     header("Location: ../login.php");
   }
 ?>
-</body>
-</html>

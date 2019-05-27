@@ -2,13 +2,13 @@
   
   a.menu{
     color:white;
-    font-family: "Tahoma", "Geneva", sans-serif; 
+    font-family: Raleway, sans-serif;
     margin-bottom:0px;
 
   }
   .nav-link:hover{
     color:black;
-    font-family: "Tahoma", "Geneva", sans-serif; 
+    font-family: Raleway,sans-serif;
     margin-bottom:0px; 
   }
   a.nav-link{
@@ -17,7 +17,7 @@
     cursor: pointer;
     position: relative;
     color: white;
-    font-family: "Tahoma", "Geneva", sans-serif;
+    font-family: Raleway ,sans-serif;
     margin-bottom:0px;
   }
   
@@ -29,6 +29,7 @@
 .container{
     margin-top:20px;
     height:600px;
+    position:relative;
 }
 
   img#usuario{

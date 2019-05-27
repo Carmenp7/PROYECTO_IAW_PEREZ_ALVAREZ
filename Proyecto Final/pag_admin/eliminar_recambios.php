@@ -66,11 +66,9 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
           ?> 
           <?php endif ?>
 
-
-
-
-
 </body>
+<?php include_once 'pie_admin.php'; ?>
+
 </html>
 
 <?php } else {
