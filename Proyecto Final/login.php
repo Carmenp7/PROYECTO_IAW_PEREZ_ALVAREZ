@@ -28,14 +28,18 @@
           $consulta="select * from clientes where
           Nombre='$_POST[user]' and password=md5('$_POST[password]');";
 
+          
+
           if ($result = $connection->query($consulta)) {
 
               if ($result->num_rows===0) {
+
                 echo "<script type='text/javascript'>alert('Este usuario no está registrado');</script>";
               } else {
 
-                $_SESSION["user"]=$_POST["user"];
-                $_SESSION["language"]="es";
+                $_SESSION['user']=$_POST['user'];
+                $usuario=$result->fetch_object();
+                $_SESSION['tipo']=$usuario->tipo;
 
                 header("Location: sesiones.php");
               }
@@ -85,7 +89,5 @@
 		</div>
 	</div>
 </div>
-
-    
-    </body>
+</body>
 </html>

@@ -1,5 +1,10 @@
+<?php session_start();
 
-<?php ob_start(); ?>
+if ($_SESSION["tipo"] !=='administra') { 
+    session_destroy();
+    header("Location: ../login.php");}
+?>
+
 
 <!DOCTYPE html> 
 <html>
@@ -25,14 +30,10 @@
         if ($connection->connect_errno) {
             printf("Connection failed: %s\n", $connection->connect_error);
             exit();
-        }
-  //Open the session
-  session_start();
-
-  if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
-
-        <?php include_once "menu_admin.php"?>
- 
+        } 
+    ?>
+    
+    <?php include_once "menu_admin.php"?>
     
     <div class="row">
         <div class="col-md-12">
@@ -106,9 +107,3 @@
 </body>
 <?php include_once 'pie_admin.php'; ?>
 </html>
-
-<?php } else {
-    session_destroy();
-    header("Location: ../login.php");
-  }
-?>

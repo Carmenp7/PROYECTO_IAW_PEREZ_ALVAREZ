@@ -1,5 +1,9 @@
+<?php session_start();
 
-<?php ob_start(); ?>
+if ($_SESSION["tipo"] !=='administra') { 
+    session_destroy();
+    header("Location: ../login.php");}
+?>
 
 <!DOCTYPE html> 
 <html>
@@ -18,13 +22,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
     <body>
-    <?php
-
-  //Open the session
-  session_start();
-
-  if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
-
         <?php include_once "menu_admin.php"?>
  
     
@@ -92,9 +89,3 @@
 </body>
 <?php include_once 'pie_admin.php'; ?>
 </html>
-
-<?php } else {
-    session_destroy();
-    header("Location: ../login.php");
-  }
-?>

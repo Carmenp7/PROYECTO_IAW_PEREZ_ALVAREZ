@@ -1,0 +1,44 @@
+.pie{
+    margin-bottom: 0px; 
+    margin-top: 500px;
+    margin-left:-20px;
+    width: 1371px;
+    height:200px;
+    background-color:black;
+    font-size: 15px;
+    color: white;
+    font-family: Raleway,sans-serif;
+    position:absolute;
+    left: 0px;
+    right: 0px;
+
+}
+p{
+    display:block;
+    margin:auto;
+    padding-left:590px;
+}
+img#foto{
+    margin:0px;
+    width:200px;
+    display:block;
+    margin:auto;
+    padding-top:20px;
+}
+.social_icon{
+    margin-top:30px;
+    margin-left:100px;
+}
+
+.social_icon span{
+    font-size: 30px;
+    margin-left: 10px;
+    color: #ff8533;
+    }
+    
+.social_icon span:hover{
+color: black;
+cursor: pointer;
+}
+        
+

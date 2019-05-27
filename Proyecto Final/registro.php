@@ -81,13 +81,13 @@
 
 			$consulta1="select * from clientes where Nombre='$_POST[user]'";
 
-			$consulta2="INSERT into clientes (Correo,Nombre,password,Fecha_Alta) values
-      ('$_POST[correo]','$_POST[user]',md5('$_POST[password]'),curdate())";
+			$consulta2="INSERT into clientes (Correo,Nombre,password,Fecha_Alta,tipo) values
+      ('$_POST[correo]','$_POST[user]',md5('$_POST[password]'),curdate(),'usuario')";
 
       if ($result = $connection->query($consulta1)) {
           if ($result->num_rows==0) {
             if ($result = $connection->query($consulta2)) {
-							header("refresh:3;url=login.php");
+							header("Location: login.php");
 						}
 					} else {
 						header("refresh:0;url=registro.php");

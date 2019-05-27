@@ -1,3 +1,10 @@
+<?php session_start();
+
+if ($_SESSION["tipo"] !=='administra') { 
+    session_destroy();
+    header("Location: ../login.php");}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,4 +112,5 @@
     
     <?php include_once 'pie_admin.php'; ?>
 </body>
+
 </html>

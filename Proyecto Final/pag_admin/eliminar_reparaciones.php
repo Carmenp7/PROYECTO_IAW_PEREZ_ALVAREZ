@@ -1,9 +1,11 @@
-<?php ob_start(); ?>
-
 <?php session_start();
 
-if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
- <!DOCTYPE html> 
+if ($_SESSION["tipo"] !=='administra') { 
+    session_destroy();
+    header("Location: ../login.php");}
+?>
+
+<!DOCTYPE html> 
 <html>
     <head>
     <meta charset="UTF-8">
@@ -22,7 +24,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
     </head>
     <body>
 
-        <?php include_once "menu_admin.php"?>
+    <?php include_once "menu_admin.php"?>
 
 
     <?php if (!isset($_POST["eliminar"])) : ?>
@@ -39,7 +41,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
             </form>
            
           
-           <?php else:?>
+    <?php else:?>
         <?php 
 
             $connection = new mysqli("localhost", "root", "2asirtriana", "proyecto");
@@ -67,14 +69,7 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
           <?php endif ?>
 
 </body>
-<?php include_once 'pie_admin.php'; ?>
+
+    <?php include_once 'pie_admin.php'; ?>
 
 </html>
-
-<?php } else {
-    session_destroy();
-    header("Location: ../login.php");
-  }
-
-
- ?>

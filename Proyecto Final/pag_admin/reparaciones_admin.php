@@ -1,8 +1,9 @@
+<?php session_start();
 
- <?php session_start();
-
-if (isset($_SESSION["user"]) && $_SESSION["user"]=="admin") { ?>
-
+if ($_SESSION["tipo"] !=='administra') { 
+    session_destroy();
+    header("Location: ../login.php");}
+?>
 
 <!DOCTYPE html>
 <html>
@@ -89,11 +90,3 @@ if ($result = $connection->query("select * from reparaciones;")) {
 
 <?php include_once 'pie_admin.php'?>
 </html>
-
-<?php } else {
-    session_destroy();
-    header("Location: ../login.php");
-  }
-
-
- ?>

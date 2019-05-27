@@ -1,10 +1,3 @@
-<?php session_start();
-
-if ($_SESSION["tipo"] =='administra') { 
-    session_destroy();
-    header("Location: ../login.php");}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +18,7 @@ if ($_SESSION["tipo"] =='administra') {
 </head>  
 
 <body> 
-
+    
     <?php include_once 'menu_user.php'; ?>
 
     <?php
