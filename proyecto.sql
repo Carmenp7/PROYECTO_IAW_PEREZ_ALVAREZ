@@ -18,6 +18,7 @@
 --
 -- Table structure for table `clientes`
 --
+
 drop database if exists proyecto;
 create database proyecto;
 use proyecto;
@@ -32,8 +33,9 @@ CREATE TABLE `clientes` (
   `Correo` varchar(40) DEFAULT NULL,
   `password` varchar(40) DEFAULT NULL,
   `Fecha_Alta` date DEFAULT NULL,
+  `tipo` varchar(10) DEFAULT 'usuario',
   PRIMARY KEY (`CodCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=4570 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +44,7 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (1,'user','user','user@user.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31'),(2,'admin','admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31'),(3,'Rafael','Diaz Gonzalez','rafa@rafa.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31');
+INSERT INTO `clientes` VALUES (1,'user','user','user@user.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31','usuario'),(2,'admin','admin','admin@admin.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31','administra'),(3,'Rafael','Diaz Gonzalez','rafa@rafa.com','7ed1ca45414f40612d0c469e24453e40','2019-03-31','usuario');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -87,7 +89,7 @@ CREATE TABLE `recambios` (
   `Stock` smallint(6) DEFAULT NULL,
   `PrecioReferencia` decimal(6,2) DEFAULT NULL,
   PRIMARY KEY (`IdRecambio`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +98,7 @@ CREATE TABLE `recambios` (
 
 LOCK TABLES `recambios` WRITE;
 /*!40000 ALTER TABLE `recambios` DISABLE KEYS */;
-INSERT INTO `recambios` VALUES (1,'Aceite','Ralsa',5,15.00),(2,'Filtro Antipolen','VALEO',2,10.00),(3,'Junta culata','BOSCH',2,35.00),(4,'Bomba aceite','BOSCH',4,115.00);
+INSERT INTO `recambios` VALUES (1,'Aceite','Ralsa',5,15.00),(2,'Filtro Antipolen','VALEO',2,10.00),(3,'Junta culata','BOSCH',2,35.00);
 /*!40000 ALTER TABLE `recambios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,16 +110,17 @@ DROP TABLE IF EXISTS `reparaciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reparaciones` (
-  `IdReparacion` int(11) NOT NULL AUTO_INCREMENT UNIQUE,
+  `IdReparacion` int(11) NOT NULL AUTO_INCREMENT,
   `Matricula` varchar(8) NOT NULL,
   `km` decimal(8,2) DEFAULT NULL,
   `FechaEntrada` date DEFAULT NULL,
   `Averia` varchar(200) DEFAULT NULL,
   `FechaSalida` date DEFAULT NULL,
   PRIMARY KEY (`IdReparacion`),
+  UNIQUE KEY `IdReparacion` (`IdReparacion`),
   KEY `Matri` (`Matricula`),
   CONSTRAINT `Matri` FOREIGN KEY (`Matricula`) REFERENCES `vehiculos` (`Matricula`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,6 +129,7 @@ CREATE TABLE `reparaciones` (
 
 LOCK TABLES `reparaciones` WRITE;
 /*!40000 ALTER TABLE `reparaciones` DISABLE KEYS */;
+INSERT INTO `reparaciones` VALUES (1,'9845 FCV',999999.99,'0000-00-00','Revision','2019-04-19');
 /*!40000 ALTER TABLE `reparaciones` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -168,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-01  0:16:00
+-- Dump completed on 2019-05-27 11:06:19
