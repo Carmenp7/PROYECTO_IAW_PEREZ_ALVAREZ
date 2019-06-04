@@ -24,22 +24,20 @@ if ($_SESSION["tipo"] !=='administra') {
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 
 </head>  
 
     <?php include_once 'menu_admin.php'; ?>
 
-   <!-- <div class="w3-container w3-center w3-animate-zoom">
-        <p id="mensaje">EL LIMITE LO PONES TU</p>
-    </div>-->
 
+    <div class="w3-container w3-center w3-animate-zoom">
+    <p id="mensaje">EL LIMITE LO PONES TU</p>
+</div>
 
-
-    <!-- <div class="container">
+    <div class="container">
 	
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
 
@@ -98,7 +96,7 @@ if ($_SESSION["tipo"] !=='administra') {
     </a>
 </div>
                 
-</div> -->
+</div>
     
     <?php include_once 'pie_admin.php'; ?>
 

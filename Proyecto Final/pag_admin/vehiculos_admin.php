@@ -84,7 +84,7 @@ if ($result = $connection->query("select * from vehiculos;")) {
               </td>";
         echo "</tr>";
     }
-
+    echo "</table>";
     //Free the result. Avoid High Memory Usages
     $result->close();
     unset($obj);

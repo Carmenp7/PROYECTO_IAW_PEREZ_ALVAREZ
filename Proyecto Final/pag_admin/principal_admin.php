@@ -13,35 +13,30 @@ if ($_SESSION["tipo"] !=='administra') {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/Proyecto%20Final/css/principal_admin.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="/Proyecto%20Final/css/menu_admin.css" TYPE="text/css" MEDIA=screen>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <?php include_once 'menu_admin.php'?>
 
-<div class="container" style='height: 130px; margin: 0px 0px 0px 90px;'>
-    <div class="w3-animate-zoom">
-        <p id="mensaje">EL LIMITE LO PONES TU</p>
-    </div>
+<div class="w3-container w3-center w3-animate-zoom">
+    <p id="mensaje">EL LIMITE LO PONES TU</p>
 </div>
 
-
-<div class="container" style='height: 210px;' >
-	<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+<div class="container">
+    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-2" data-slide-to="1"></li>
             <li data-target="#carousel-example-2" data-slide-to="2"></li>
             <li data-target="#carousel-example-2" data-slide-to="3"></li>
         </ol>
-
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <div class="view">
@@ -91,7 +86,6 @@ if ($_SESSION["tipo"] !=='administra') {
     </div>              
 </div>
 
-
-<?php include_once 'pie_admin.php'; ?>
+<?php include_once 'pie_admin.php'?>
 
 </html>
