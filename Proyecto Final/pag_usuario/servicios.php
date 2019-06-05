@@ -40,7 +40,7 @@
 			    <div class="single_what_we_do" id="direccion">
 				    <div class="top_line"></div>
 					<div class="what_we_do_figure">
-						<img src="http://mtechwebsoft.com/templates/himax/demo/images/what_we_do/2.png" alt="" class="img-responsive">
+						<img src="/Proyecto Final/IMAGENES/llave.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">ALINEACION DE DIRECCION</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
@@ -53,7 +53,7 @@
 				<div class="single_what_we_do" id="faros">
 					<div class="top_line"></div>
 					<div class="what_we_do_figure">
-						<img src="http://mtechwebsoft.com/templates/himax/demo/images/what_we_do/2.png" alt="" class="img-responsive">
+						<img src="/Proyecto Final/IMAGENES/f.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">PULIDO Y LACADO DE FAROS</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
@@ -66,7 +66,7 @@
 				<div class="single_what_we_do" id="motor">
 					<div class="top_line"></div>
 					<div class="what_we_do_figure">
-						<img src="http://mtechwebsoft.com/templates/himax/demo/images/what_we_do/2.png" alt="" class="img-responsive">
+						<img src="/Proyecto Final/IMAGENES/motor.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">REPARACION DE MOTORES</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
@@ -79,7 +79,7 @@
 				<div class="single_what_we_do" id="ruedas">
 					<div class="top_line"></div>
 					<div class="what_we_do_figure">
-						<img src="http://mtechwebsoft.com/templates/himax/demo/images/what_we_do/2.png" alt="" class="img-responsive">
+						<img src="/Proyecto Final/IMAGENES/r.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">MONTAJE DE NEUMATICOS</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>

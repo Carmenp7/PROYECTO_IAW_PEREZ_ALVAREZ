@@ -65,7 +65,7 @@ html,body {
 }
 
 .single_what_we_do .what_we_do_figure {
-    padding: 40px 0;
+    padding: 30px 0;
 }
 .single_what_we_do .what_we_do_figure img {
     margin: 0 auto;
@@ -77,6 +77,15 @@ html,body {
     margin: 0;
     color: white;
 }
+
+.single_what_we_do .what_we_do_title:hover {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 25px;
+    margin: 0;
+    color: white;
+}
+
 .single_what_we_do .what_we_do_content {
     padding-bottom: 65px;
     color: #2b353a;
@@ -108,7 +117,7 @@ html,body {
 }
 
 #faros{
-    background-image:url(/Proyecto\ Final/IMAGENES/faross.jpg);
+    background-image:url(/Proyecto\ Final/IMAGENES/principal_admin.jpg);
     filter: grayscale(100%);
 }
 
@@ -118,7 +127,7 @@ html,body {
 }
 
 #ruedas{
-    background-image:url(/Proyecto\ Final/IMAGENES/ruedaaa.jpg);
+    background-image:url(/Proyecto\ Final/IMAGENES/principal_admin.jpg);
     filter: grayscale(100%);
 }
 
