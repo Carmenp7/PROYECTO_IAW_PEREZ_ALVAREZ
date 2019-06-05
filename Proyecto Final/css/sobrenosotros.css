@@ -1,0 +1,40 @@
+html,body {
+    height: 100%;
+    background-image:url(/Proyecto\ Final/IMAGENES/principal_admin.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    font-family: Raleway ,sans-serif;
+}
+
+div.row{
+    margin-left:20px;
+    margin-right:20px;
+    font-family: Raleway ,sans-serif;
+}
+
+div.col-md-12{
+    margin-top:20px;
+    background-color:white;
+}
+
+.seccion{
+    padding-left:100px;
+    padding-top:25px;
+    padding-bottom:20px;
+    font-weight: bold;
+}
+
+.texto{
+    padding-left:100px;
+    padding-bottom:4px;
+}
+
+#lambo{
+    margin-left:450px;
+}

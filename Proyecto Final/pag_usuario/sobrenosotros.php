@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/principal_admin.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" href="../css/sobrenosotros.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -19,11 +19,20 @@
 
 <body> 
     
-    <?php include_once 'menu_user.php'; ?>
+<?php include_once 'menu_user.php'; ?>
 
-    <?php
-    ?>
+    
+<div class="row">
+    <div class="col-md-12">
+        <p class="seccion">SOBRE NOSOTROS</p> 
+        <p class="texto">En Customs Cars proporcionamos a nuestros clientes la solución más adecuada para su vehículo.</p>  
+        <p class="texto">Nuestra actividad principal es la personalización y reparacion de vehículos de alta gama.</p>
+        <p class="texto">Todos nuestros montajes pasan un riguroso control de calidad ya que trabajamos con las primeras marcas del sector y siempre cumpliendo los plazos establecidos entre empresa y cliente, lo cual hace que Customs Cars sea una empresa líder del sector.</p>
+        <img id="lambo"src="/Proyecto Final/IMAGENES/lambo.png"/>
+    </div>
+</div>
 
-    <?php include_once 'pie_user.php'; ?>
+<?php include_once 'pie_user.php'; ?>
+
 </body>
 </html>
