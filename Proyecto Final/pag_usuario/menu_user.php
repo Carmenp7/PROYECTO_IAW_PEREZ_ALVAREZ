@@ -17,14 +17,14 @@
         <a href="/Proyecto Final/pag_usuario/principal_user.php"><img src="/Proyecto%20Final/IMAGENES/logo.png" class="navbar-brand" id="logo" href="#"/></a>
       </div>
     </nav>
-  <div class="col-md-2">
+    <div class="col-md-2">
     <a href="/Proyecto Final/pag_usuario/perfil.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
       
       <?php if (!isset($_POST["cerrar"])) : ?>
         <form id="salir" method="post">
         <a  href="/Proyecto%20Final/login.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/logout.png"/></a>
         </form>
-  </div>
+    </div>
   <div class="row">
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">

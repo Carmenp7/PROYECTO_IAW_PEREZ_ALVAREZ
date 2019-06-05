@@ -22,7 +22,7 @@
 <?php include_once 'menu_user.php'; ?>
 
     
-<div class="row">
+<div class="row" id="info">
     <div class="col-md-12">
         <p class="seccion">SOBRE NOSOTROS</p> 
         <p class="texto">En Customs Cars proporcionamos a nuestros clientes la solución más adecuada para su vehículo.</p>  
