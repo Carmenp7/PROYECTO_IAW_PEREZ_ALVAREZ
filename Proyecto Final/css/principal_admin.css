@@ -19,3 +19,15 @@ p#mensaje{
   font-weight: bold;
   font-family: Raleway ,sans-serif;
 }
+
+div.carousel-inner{
+ margin-left:200px;
+}
+
+.carousel-control-prev{
+  margin-left:70px;
+}
+
+.carousel-control-next{
+  margin-right:65px;
+}
