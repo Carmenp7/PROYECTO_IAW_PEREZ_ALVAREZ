@@ -1,10 +1,3 @@
-<?php session_start();
-
-if ($_SESSION["tipo"] =='administra') { 
-    session_destroy();
-    header("Location: ../login.php");}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +19,13 @@ if ($_SESSION["tipo"] =='administra') {
 
 <body> 
 
-    <?php include_once 'menu_user.php'; ?>
+<?php include_once 'menu_user.php'; ?>
 
-   
+<div class="w3-container w3-center w3-animate-zoom">
+    <p id="mensaje">UN EQUIPO CAPAZ DE TODO</p>
+</div>
 
-    <?php include_once 'pie_user.php'; ?>
+<?php include_once 'pie_user.php'; ?>
+
 </body>
 </html>

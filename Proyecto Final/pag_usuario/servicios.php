@@ -44,9 +44,6 @@
 					</div>
 					<h4 class="what_we_do_title">ALINEACION DE DIRECCION</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
-					    <a class="what_we_do_icon" href="#">
-						    <i class="fa fa-angle-right" aria-hidden="true"></i>
-						</a>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-3">
@@ -57,9 +54,6 @@
 					</div>
 					<h4 class="what_we_do_title">PULIDO Y LACADO DE FAROS</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
-					<a class="what_we_do_icon" href="#">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</a>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-3">
@@ -70,9 +64,6 @@
 					</div>
 					<h4 class="what_we_do_title">REPARACION DE MOTORES</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
-						<a class="what_we_do_icon" href="#">
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-						</a>
 				</div>
             </div>
             <div class="col-sm-6 col-md-3">
@@ -83,9 +74,6 @@
 					</div>
 					<h4 class="what_we_do_title">MONTAJE DE NEUMATICOS</h4>
 					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
-						<a class="what_we_do_icon" href="#">
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-						</a>
 				</div>
 			</div>
 	    </div>
