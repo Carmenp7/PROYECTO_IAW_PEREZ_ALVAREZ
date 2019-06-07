@@ -43,7 +43,7 @@
 						<img src="/Proyecto Final/IMAGENES/llave.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">ALINEACION DE DIRECCION</h4>
-					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+					<div class="what_we_do_content">Un correcto alineado de dirección es importante para conducir con seguridad.</div>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-3">
@@ -53,7 +53,7 @@
 						<img src="/Proyecto Final/IMAGENES/f.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">PULIDO Y LACADO DE FAROS</h4>
-					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+					<div class="what_we_do_content">El sol con los años estropea nuestros faros dejándolos amarillos e inservibles.</div>
 				</div>
 			</div>
 			<div class="col-sm-6 col-md-3">
@@ -63,7 +63,7 @@
 						<img src="/Proyecto Final/IMAGENES/motor.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">REPARACION DE MOTORES</h4>
-					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+					<div class="what_we_do_content">.</div>
 				</div>
             </div>
             <div class="col-sm-6 col-md-3">
@@ -73,7 +73,7 @@
 						<img src="/Proyecto Final/IMAGENES/r.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">MONTAJE DE NEUMATICOS</h4>
-					<div class="what_we_do_content">Lorem ipsum dolor amet, consectetur adipiscing elit eiusmod.</div>
+					<div class="what_we_do_content">Nada mas importante que cuidar los neumáticos de nuestro vehículo.</div>
 				</div>
 			</div>
 	    </div>

@@ -31,16 +31,21 @@ div#contacta.row{
 img#imagen{
     position:left;
     width:450px;
-    padding-top:50px;
+    padding-top:30px;
     padding-left:40px;
+}
+
+form{
+    height:300px;
 }
 
 div.col-md-7{
     padding-left:60px;
-    padding-top:100px;
+    padding-top:80px;
 }
 
 div.row input{
+    color:#404040;
     margin-right:30px;
     margin-bottom:20px;
     background-color: #cccccc;
@@ -48,8 +53,18 @@ div.row input{
     padding-left:10px;
 }
 
+div.row textarea{
+    color:#404040;
+    background-color: #cccccc;
+    border:0px;
+    padding-top:5px;
+    padding-left:10px;
+
+}
+
 input.botones{
     padding-right:10px;
     height:30px;
     width:85px;
+    font-weight: bold;
 }

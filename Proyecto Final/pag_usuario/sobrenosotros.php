@@ -25,9 +25,10 @@
 <div class="row" id="info">
     <div class="col-md-12">
         <p class="seccion">SOBRE NOSOTROS</p> 
-        <p class="texto">En Customs Cars proporcionamos a nuestros clientes la solución más adecuada para su vehículo.</p>  
-        <p class="texto">Nuestra actividad principal es la personalización y reparacion de vehículos de alta gama.</p>
-        <p class="texto">Todos nuestros montajes pasan un riguroso control de calidad ya que trabajamos con las primeras marcas del sector y siempre cumpliendo los plazos establecidos entre empresa y cliente, lo cual hace que Customs Cars sea una empresa líder del sector.</p>
+        <p class="texto">En Customs Garage proporcionamos a nuestros clientes la solución más adecuada para su vehículo.</p>  
+        <p class="texto">Nuestra actividad principal es la personalización y reparación de vehículos de alta gama.</p>
+        <p class="texto">Todos nuestros montajes pasan un riguroso control de calidad ya que trabajamos con las primeras marcas
+        del sector y siempre cumpliendo los plazos establecidos entre empresa y cliente, lo cual hace que Customs Garage sea una empresa líder del sector.</p>
         <img id="lambo"src="/Proyecto Final/IMAGENES/lambo.png"/>
     </div>
 </div>

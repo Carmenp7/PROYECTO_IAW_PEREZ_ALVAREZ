@@ -35,9 +35,13 @@
             <div class="row" style="height:55px;">
                 <input type="text" name="Email" size="83" required placeholder=" Email *">
             </div>
-            <input class="botones" type="submit" value="Enviar">
-            <input class="botones" type="reset" value="Borrar">
-            
+            <div class="row" style="height:100px; margin-bottom:40px;">
+                <textarea name="Mensaje" rows="5" cols="83" required placeholder=" Mensaje *"></textarea>
+            </div>
+            <div class="row" >
+                <input class="botones" type="submit" value="Enviar">
+                <input class="botones" type="reset" value="Borrar">
+            </div>
         </form>
     </div>
 </div>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/Proyecto%20Final/css/perfil.css" TYPE="text/css" MEDIA=screen>
-    <link rel="stylesheet" href="/Proyecto%20Final/css/menu_user.css" TYPE="text/css" MEDIA=screen>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
@@ -35,14 +34,13 @@
                 }
                 //MAKING A SELECT QUERY
                 /* Consultas de selección que devuelven un conjunto de resultados */
-                if ($result = $connection->query("select * from clientes where Nombre='$_SESSION[user]'")) {
+                if ($result = $connection->query("select * from clientes where Nombre='$_SESSION[tipo]'")) {
 
 
                     //FETCHING OBJECTS FROM THE RESULT SET
                     //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
                 $obj = $result->fetch_object();
                         //PRINTING EACH ROW
-
                         echo "<table class='table custab'";
                         echo "<tr><td><b>Codigo de Cliente: </b></td><td>$obj->CodCliente</td></tr>";
                         echo "<tr><td><b>Nombre: </b></td><td>$obj->Nombre</td></tr>";
@@ -51,8 +49,6 @@
                         echo "<tr><td><b>Fecha de alta: </b></td><td>$obj->Fecha_Alta</td></tr>";
                         echo "</table>";
                     
-                    
-
                     //Free the result. Avoid High Memory Usages
                     $result->close();
                     unset($obj);
