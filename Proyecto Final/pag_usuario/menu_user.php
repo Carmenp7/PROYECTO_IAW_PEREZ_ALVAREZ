@@ -29,19 +29,19 @@
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">
         <li class="nav-list-item">
-          <a href="/Proyecto Final/pag_usuario/sobrenosotros.php"  id="menu" class="nav-link">Sobre Nosotros</a>
+          <a href="/Proyecto Final/pag_usuario/sobrenosotros.php" class="nav-link">Sobre Nosotros</a>
         </li>
         <li class="nav-list-item">
-          <a href="/Proyecto Final/pag_usuario/servicios.php"  id="menu" class="nav-link">Servicios</a>
+          <a href="/Proyecto Final/pag_usuario/servicios.php" class="nav-link">Servicios</a>
         </li>
         <li class="nav-list-item">
-          <a href="/Proyecto Final/pag_usuario/noticias.php"  id="menu" class="nav-link">Noticias</a>
+          <a href="/Proyecto Final/pag_usuario/noticias.php" class="nav-link">Noticias</a>
         </li>
         <li class="nav-list-item">
-          <a href="/Proyecto Final/pag_usuario/contacta.php"  id="menu" class="nav-link">Contacta</a>
+          <a href="/Proyecto Final/pag_usuario/contacta.php" class="nav-link">Contacta</a>
         </li>
-        <li class="nav-list-item" >
-          <a href="/Proyecto Final/pag_usuario/vehiculos_user.php" id="vehiculos" id="menu" class="nav-link">MIS VEHICULOS</a>
+        <li class="nav-list-item">
+          <a href="/Proyecto Final/pag_usuario/vehiculos_user.php" id="vehiculos" class="nav-link">MIS VEHICULOS</a>
         </li>
       </ul>
     </nav>

@@ -40,36 +40,33 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
             printf("Connection failed: %s\n", $connection->connect_error);
             exit();
         }
-        if ($result = $connection->query("select Matricula, Marca, Modelo, Color, FechaMatriculacion from clientes c join vehiculos 
-        v on c.CodCliente = v.CodCliente where Nombre='$_SESSION[user]'")) {
+
+        if ($result = $connection->query("select IdReparacion, r.Matricula, km, FechaEntrada, Averia, FechaSalida from clientes c join vehiculos v on c.CodCliente = v.CodCliente
+         join reparaciones r on v.Matricula = r.Matricula where c.Nombre='$_SESSION[user]';")) {
         
         echo "<table class='table table-hover'>"
     ?>
             <thead>
                 <tr>
+                    <th>Id Reparacion</th>
                     <th>Matricula</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Color</th>
-                    <th>Fecha de Matriculación</th>
-                    <th></th>
+                    <th>Km</th>
+                    <th>Fecha de Entrada</th>
+                    <th>Fecha de Salida</th>
+                    <th>Avería</th>
                 </tr>
             </thead>
     <?php
         $obj = $result->fetch_object();
             echo "<tr>";
+                echo "<td>$obj->IdReparacion</td>";
                 echo "<td>$obj->Matricula</td>";
-                echo "<td>$obj->Marca</td>";
-                echo "<td>$obj->Modelo</td>";
-                echo "<td>$obj->Color</td>";
-                echo "<td>$obj->FechaMatriculacion</td>";
-                echo "<td>
-                        <a href='reparaciones_user.php?Matricula=$obj->Matricula'><img id='imagen'src='/Proyecto%20Final/IMAGENES/coche.png'/></a> 
-                    </td>";
+                echo "<td>$obj->km</td>";
+                echo "<td>$obj->FechaEntrada</td>";
+                echo "<td>$obj->FechaSalida</td>";
+                echo "<td>$obj->Averia</td>";
             echo "</tr>";
-        } else {
-        echo "<td>"."No se han encontrado datos"."</td>";
-        };
+        }
     ?>
         </table>
     </div>
