@@ -28,7 +28,7 @@
   <div class="row">
     <nav class="col-md-12" class="main-navigation">
       <ul class="nav-list">
-      <li class="nav-list-item">
+        <li class="nav-list-item">
           <a href="/Proyecto Final/pag_usuario/sobrenosotros.php"  id="menu" class="nav-link">Sobre Nosotros</a>
         </li>
         <li class="nav-list-item">
@@ -39,6 +39,9 @@
         </li>
         <li class="nav-list-item">
           <a href="/Proyecto Final/pag_usuario/contacta.php"  id="menu" class="nav-link">Contacta</a>
+        </li>
+        <li class="nav-list-item" >
+          <a href="/Proyecto Final/pag_usuario/vehiculos_user.php" id="vehiculos" id="menu" class="nav-link">MIS VEHICULOS</a>
         </li>
       </ul>
     </nav>
