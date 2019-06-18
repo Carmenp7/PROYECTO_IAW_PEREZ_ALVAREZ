@@ -7,6 +7,7 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
 
 <!DOCTYPE html>
 <html lang="en">
+<title>CUSTOMS GARAGE</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,8 +42,9 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
             exit();
         }
 
-        if ($result = $connection->query("select IdReparacion, r.Matricula, km, FechaEntrada, Averia, FechaSalida from clientes c join vehiculos v on c.CodCliente = v.CodCliente
-         join reparaciones r on v.Matricula = r.Matricula where c.Nombre='$_SESSION[user]';")) {
+        if ($result = $connection->query("select IdReparacion, r.Matricula, km, FechaEntrada, Averia, FechaSalida from 
+        clientes c join vehiculos v on c.CodCliente = v.CodCliente join reparaciones r on v.Matricula = r.Matricula where 
+        r.Matricula ='$_GET[Matricula]';")) {
         
         echo "<table class='table table-hover'>"
     ?>
@@ -57,7 +59,7 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
                 </tr>
             </thead>
     <?php
-        $obj = $result->fetch_object();
+        while($obj = $result->fetch_object()) {
             echo "<tr>";
                 echo "<td>$obj->IdReparacion</td>";
                 echo "<td>$obj->Matricula</td>";
@@ -67,6 +69,9 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
                 echo "<td>$obj->Averia</td>";
             echo "</tr>";
         }
+        } else {
+        echo "<td>"."No se han encontrado datos"."</td>";
+        };
     ?>
         </table>
     </div>

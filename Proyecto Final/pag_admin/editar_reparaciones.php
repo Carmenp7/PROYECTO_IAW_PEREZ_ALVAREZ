@@ -8,6 +8,7 @@ if ($_SESSION["tipo"] !=='administra') {
 
 <!DOCTYPE html> 
 <html>
+<title>CUSTOMS GARAGE</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,8 +84,7 @@ if ($_SESSION["tipo"] !=='administra') {
             <?php
             //MAKING A SELECT QUERY
             //Password coded with md5 at the database. Look for better options
-            $consulta="UPDATE reparaciones set IdReparacion='$_POST[IdReparacion]', Matricula='$_POST[Matricula]', km='$_POST[km]', Averia='$_POST[Averia]', FechaEntrada=$_POST[FechaSalida] 
-            where IdReparacion='$_GET[IdReparacion]'";
+            $consulta="UPDATE reparaciones set IdReparacion='$_POST[IdReparacion]', Matricula='$_POST[Matricula]', km='$_POST[km]', Averia='$_POST[Averia]' where IdReparacion='$_GET[IdReparacion]'";
 
             var_dump($consulta);
             //Test if the query was correct

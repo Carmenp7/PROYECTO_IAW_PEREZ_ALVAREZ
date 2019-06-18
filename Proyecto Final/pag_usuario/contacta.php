@@ -7,6 +7,7 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
 
 <!DOCTYPE html>
 <html lang="en">
+<title>CUSTOMS GARAGE</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,7 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
         <img id="imagen" src="/Proyecto Final/IMAGENES/rep.JPG">
     </div>
     <div class="col-md-7">
-        <form action="" method="get">
+        <form action="enviar.php" method="post">
             <div class="row" style="height:55px;">
                 <input type="text" name="Nombre" size="30" required placeholder=" Nombre *">
                 <input type="text" name="Apellidos" size="45" required placeholder=" Apellidos *">

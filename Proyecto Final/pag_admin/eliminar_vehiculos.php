@@ -6,6 +6,7 @@ if ($_SESSION["tipo"] !=='administra') {
 ?>
 
 <!DOCTYPE html> 
+<title>CUSTOMS GARAGE</title>
 <html>
     <head>
     <meta charset="UTF-8">

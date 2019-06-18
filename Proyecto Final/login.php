@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUSTOMS CARS</title>
+    <title>CUSTOMS GARAGE</title>
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -31,14 +31,17 @@
 
           if ($result = $connection->query($consulta)) {
 
-              if ($result->num_rows===0) {
+						if ($result->num_rows===0) {
 
-                echo "<script type='text/javascript'>alert('Este usuario no está registrado');</script>";
-              } else {
+							echo "<script type='text/javascript'>alert('Este usuario no está registrado');</script>";
+							
+						} else {
 
-                $_SESSION['user']=$_POST['user'];
+								$_SESSION['user']=$_POST['user'];
                 $usuario=$result->fetch_object();
-                $_SESSION['tipo']=$usuario->tipo;
+								$_SESSION['tipo']=$usuario->tipo;
+								
+								$_SESSION['password']=$_POST['password'];
 
                 header("Location: sesiones.php");
               }

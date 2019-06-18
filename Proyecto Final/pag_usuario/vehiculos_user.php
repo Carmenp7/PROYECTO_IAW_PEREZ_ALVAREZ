@@ -7,6 +7,7 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
 
 <!DOCTYPE html>
 <html lang="en">
+<title>CUSTOMS GARAGE</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,16 +48,16 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
     ?>
             <thead>
                 <tr>
-                    <th>Matricula</th>
-                    <th>Marca</th>
-                    <th>Modelo</th>
-                    <th>Color</th>
-                    <th>Fecha de Matriculación</th>
-                    <th></th>
+                    <th width="170px">Matricula</th>
+                    <th width="170px">Marca</th>
+                    <th width="170px">Modelo</th>
+                    <th width="170px">Color</th>
+                    <th width="300px">Fecha de Matriculación</th>
+                    <th width="170px"></th>
                 </tr>
             </thead>
     <?php
-        $obj = $result->fetch_object();
+        while($obj = $result->fetch_object()) {
             echo "<tr>";
                 echo "<td>$obj->Matricula</td>";
                 echo "<td>$obj->Marca</td>";
@@ -64,9 +65,10 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
                 echo "<td>$obj->Color</td>";
                 echo "<td>$obj->FechaMatriculacion</td>";
                 echo "<td>
-                        <a href='reparaciones_user.php?Matricula=$obj->Matricula'><img id='imagen'src='/Proyecto%20Final/IMAGENES/coche.png'/></a> 
+                        <a href='reparaciones_user.php?Matricula=$obj->Matricula'><img id='imagen'src='/Proyecto%20Final/IMAGENES/reparacion.png'/></a> 
                     </td>";
             echo "</tr>";
+        }   
         } else {
         echo "<td>"."No se han encontrado datos"."</td>";
         };
