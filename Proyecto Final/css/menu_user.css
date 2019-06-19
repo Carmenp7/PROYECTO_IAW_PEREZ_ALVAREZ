@@ -1,4 +1,8 @@
 #Menu
+
+nav.col-md-12{
+  top:100px;
+}
   .nav-link:hover{
     color:black;
     font-family: Raleway,sans-serif;
@@ -24,6 +28,7 @@
     margin-top:20px;
     height:600px;
     position:relative;
+    margin-bottom:10px;
 }
 
   img#usuario{
@@ -59,17 +64,22 @@
     margin-bottom:0px;
   }
   
-  nav.col-md-10{
-    height: 100px;
-  }
+.col-md-10{
+  height: 100px;
+}
+
+.col-md-2{
+ padding-left:0px;
+ padding-right:0px;
+}
   
-  .col-md-2{
-    height: 100px;
-  }
-  
-  .nav-list{
+nav.col-md-12{
+  top:100px;
+}
+
+.nav-list{
     padding-left:230px;
-    padding-right:100px;
+    padding-right:70px;
     margin-top:20px;
     margin-bottom:0px;
   }
@@ -78,8 +88,9 @@ div.row hr{
     margin-top: 145px;
     border-top: 1px solid white;
 }
+
 form#salir{
-  margin-right:50px;
+  margin-right:0px;
   float:right;
   width: 50px;
 }

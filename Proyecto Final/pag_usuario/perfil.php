@@ -54,50 +54,8 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
                     unset($connection);
 
                 }
-
                 ?>
             </div>
-
-            <?php if (!isset($_POST["password"])) : ?>
-            <FORM id="formu" METHOD="POST">
-            <div id='tabla2'>
-                <p>ACTUALIZAR CONTRASEÑA</p>
-                <input style='padding-left:5px;' type='password' name='password' placeholder='Nueva Contraseña'>
-                <button type='submit' name='Actualizar'>Actualizar</button>
-            </div>
-            <FORM>
-            
-
-            <?php else:?>
-            <?php
-            $connection2 = new mysqli("localhost", "root", "2asirtriana", "proyecto");
-
-            //TESTING IF THE CONNECTION WAS RIGHT
-            if ($connection2->connect_errno) {
-                printf("Connection failed: %s\n", $connection2->connect_error);
-                exit();
-            }
-
-            //MAKING A SELECT QUERY
-            //Password coded with md5 at the database. Look for better options
-            $consulta="UPDATE clientes set password = md5('$_GET[password]') where Nombre=$_SESSION[user]";
-
-
-            //Test if the query was correct
-            //SQL Injection Possible
-            //Check http://php.net/manual/es/mysqli.prepare.php for more security
-            
-            if ($result2 = $connection2->query($consulta)) {
-                header("Location: /Proyecto Final/pag_usuario/perfil.php");  
-            }
-            else {
-                echo "<h1>Usuario no actulizado</h1>";
-            
-                header("Location: /Proyecto Final/pag_usuario/noticias.php");  
-            } ?>
-            <?php endif ?>
-
-
         </div>
     </body>
     <?php include_once("pie_user.php"); ?>

@@ -71,7 +71,7 @@ if (!isset($_SESSION['tipo']) || ($_SESSION['tipo']!='usuario')) {
 						<img src="/Proyecto Final/IMAGENES/motor.png" style="width:60px;" alt="" class="img-responsive">
 					</div>
 					<h4 class="what_we_do_title">REPARACION DE MOTORES</h4>
-					<div class="what_we_do_content">.</div>
+					<div class="what_we_do_content">Reparamos y preparamos los motores con los mejores recambios del mercado.</div>
 				</div>
             </div>
             <div class="col-sm-6 col-md-3">

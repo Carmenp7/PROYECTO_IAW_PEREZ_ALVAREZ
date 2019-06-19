@@ -10,24 +10,26 @@
 
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
-<div class="container" style='height: 210px;'>
-  <div class="row">
+<div class="container" style='height: 210px; margin-bottom:20px;'>
+  <div class="row" >
     <nav class="col-md-10" class="main-navigation">
       <div class="navbar-header animated fadeInUp">
         <a href="/Proyecto Final/pag_usuario/principal_user.php"><img src="/Proyecto%20Final/IMAGENES/logo.png" class="navbar-brand" id="logo" href="#"/></a>
       </div>
     </nav>
-    <div class="col-md-2">
-    <a href="/Proyecto Final/pag_usuario/perfil.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
+    <div class="col-md-2" style='padding:0px; width:200px;'>
+      <a href="/Proyecto Final/pag_usuario/perfil.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/usuario3.png"></a>
+      <a href="/Proyecto Final/pag_usuario/contrasena.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/contrasena.png"></a>
       
       <?php if (!isset($_POST["cerrar"])) : ?>
-        <form id="salir" method="post">
-        <a  href="/Proyecto%20Final/login.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/logout.png"/></a>
+        <form id="salir" method="post" style="margin-right:0px;">
+          <a  href="/Proyecto%20Final/login.php"><img id="usuario" src="/Proyecto%20Final/IMAGENES/logout.png"/></a>
         </form>
     </div>
-  <div class="row">
+  </div>
+  <div class="row" style='padding-top: 70px;'>
     <nav class="col-md-12" class="main-navigation">
-      <ul class="nav-list">
+      <ul class="nav-list" style='padding-right: 70px;'>
         <li class="nav-list-item">
           <a href="/Proyecto Final/pag_usuario/sobrenosotros.php" class="nav-link">Sobre Nosotros</a>
         </li>
@@ -46,9 +48,8 @@
       </ul>
     </nav>
   </div>
-  </div>
   <div class="row">
-    <hr id="separador" noshade="noshade" size="4" width="100%" />
+    <hr style='margin-top: 95px;' noshade="noshade" size="4" width="100%" />
   </div>
 </div>
 <?php else: ?>
